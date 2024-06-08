@@ -25,6 +25,7 @@ class Settings extends StatelessWidget {
             "Settings",
             style: TextStyle(fontSize: 18, color: Colors.pink),
           )),
+      body: Container(),
     );
   }
 }
