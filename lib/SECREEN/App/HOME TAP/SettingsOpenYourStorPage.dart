@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/imageassets.dart';
 
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@ SettingsOpenYourStorePage  @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
 class SettingsOpenYourStorePage extends StatelessWidget {
   const SettingsOpenYourStorePage({super.key});
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@ SettingsOpenYourStorePage  @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +41,10 @@ class SettingsOpenYourStorePage extends StatelessWidget {
           child: SingleChildScrollView(
         child: Column(
           children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
+            //@@@@@@@@//@@@@@@@@@//
+
             Container(
               alignment: Alignment.center,
               height: 200,
@@ -37,6 +53,11 @@ class SettingsOpenYourStorePage extends StatelessWidget {
                 child: Image.asset(ImageAsset.kolmall),
               ),
             ),
+
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@// TYPE COUNTACTS
+            //@@@@@@@@//@@@@@@@@@//
+
             Container(
               height: 600,
               child: GridView.builder(

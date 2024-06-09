@@ -1,12 +1,14 @@
 class ImageAsset {
   static const String asssetimage = "assets/images";
   static const String iconsimages = "assets/IconsImages";
+  static const String lottie = "assets/lottie";
 
   static const String image1 = "$asssetimage/salee.jpg";
   static const String eat = "$asssetimage/00.jpg";
   static const String image2 = "$asssetimage/avonnn.jpg";
   static const String matam = "$asssetimage/matam.jpg";
   static const String ecommerce = "$asssetimage/ecommerce.jpg";
+  static const String dozo = "$asssetimage/1716639907251.png";
   static const String kolmall = "$asssetimage/1717847406835.png";
 
   //@@@@@@@@//@@@@@@@@@//
@@ -45,4 +47,11 @@ class ImageAsset {
   static const String web = "$asssetimage/كروم.jpeg";
   static const String twiter = "$asssetimage/تويتر.png";
   static const String countacts = "$asssetimage/اتصال.png";
+
+  //@@@@@@@@//@@@@@@@@@//
+  //@@@@@@@@//@@@@@@@@@//  Lottie
+  //@@@@@@@@//@@@@@@@@@//
+
+  static const String locationLottie = "$lottie/Animation - 1717942622036.json";
+  static const String officeLottie = "$lottie/Animation - 1717942834820.json";
 }

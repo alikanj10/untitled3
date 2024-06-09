@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/imageassets.dart';
 
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@    SettingsProfilePage     @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
 class SettingsProfilePage extends StatelessWidget {
   const SettingsProfilePage({super.key});
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@    SettingsProfilePage     @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +58,10 @@ class SettingsProfilePage extends StatelessWidget {
           child: SingleChildScrollView(
         child: Column(
           children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
+            //@@@@@@@@//@@@@@@@@@//
+
             Container(
               alignment: Alignment.center,
               height: 200,
@@ -56,7 +72,7 @@ class SettingsProfilePage extends StatelessWidget {
             ),
 
             //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@// CONTENTS PAGE FROM TEXT FORM FILESED
             //@@@@@@@@//@@@@@@@@@//
 
             ...List.generate(
