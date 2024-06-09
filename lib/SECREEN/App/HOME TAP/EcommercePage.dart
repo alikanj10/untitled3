@@ -51,6 +51,7 @@ class _StateEcommerce extends State<Ecommerce> {
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@// CHOISE CHIP ECOMMERCE
             //@@@@@@@@//@@@@@@@@@//
+
             Container(
                 margin: const EdgeInsets.all(10),
                 height: 50,
@@ -84,6 +85,7 @@ class _StateEcommerce extends State<Ecommerce> {
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@// TEXT FORM FILED (SEARCH) ECOMMRECE
             //@@@@@@@@//@@@@@@@@@//
+
             KH_FormTextField(
                 padding: const EdgeInsets.all(10),
                 placeHolder: "ابحث",
@@ -108,6 +110,7 @@ class _StateEcommerce extends State<Ecommerce> {
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@// CardForDetilseEcommersAndResturant
             //@@@@@@@@//@@@@@@@@@//
+
             const CardForDetilseEcommersAndResturant(
                 nameresturantorecommers: "AVON",
                 contentRestOrEcomm: "AVON , PARFAN",

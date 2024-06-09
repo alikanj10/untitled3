@@ -99,7 +99,10 @@ class KH_BottomSheet {
         return Container(
           // height: double.infinity,
           // width: double.infinity,
-          color: Colors.transparent,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(31),
+              // color: Colors.transparent,
+              color: Colors.white),
           child: child,
         );
       },

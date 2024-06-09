@@ -41,6 +41,10 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
         width: double.infinity,
         child: Row(
           children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
@@ -53,6 +57,11 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
+
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+
             Expanded(
               child: Container(
                 child: Column(
@@ -77,6 +86,10 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                     const SizedBox(
                       height: 2,
                     ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
                     Row(
                       children: [
                         Expanded(
@@ -100,6 +113,10 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        //@@@@@@@@//@@@@@@@@@//
+                        //@@@@@@@@//@@@@@@@@@//
+                        //@@@@@@@@//@@@@@@@@@//
                         Expanded(
                             child: KH_SplashedCard(
                           borderRadius: 8,
@@ -120,6 +137,10 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                             ],
                           ),
                         )),
+
+                        //@@@@@@@@//@@@@@@@@@//
+                        //@@@@@@@@//@@@@@@@@@//
+                        //@@@@@@@@//@@@@@@@@@//
                         Expanded(
                           child: KH_SplashedCard(
                             borderRadius: 8,
@@ -130,13 +151,8 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
-                                  height: 25,
-                                  width: 40,
-                                  child: IconButton(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    icon: const Icon(Icons.offline_pin_rounded),
-                                    onPressed: () {},
+                                  child: const Icon(
+                                    Icons.offline_pin_rounded,
                                     color: Colors.green,
                                   ),
                                 ),

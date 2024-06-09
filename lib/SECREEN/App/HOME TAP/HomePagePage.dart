@@ -4,8 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Responsivness.dart';
-import 'package:untitled3/SECREEN/App/HOME%20TAP/resturant.dart';
-import 'package:untitled3/SECREEN/App/HOME%20TAP/Ecommerce.dart';
+import 'package:untitled3/SECREEN/App/HOME%20TAP/resturantPage.dart';
+import 'package:untitled3/SECREEN/App/HOME%20TAP/EcommercePage.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/imageassets.dart';
 

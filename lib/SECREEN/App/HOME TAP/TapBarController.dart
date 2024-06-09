@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN/App/HOME%20TAP/HomePage.dart';
-import 'package:untitled3/SECREEN/App/HOME%20TAP/Order.dart';
-import 'package:untitled3/SECREEN/App/HOME%20TAP/Settings.dart';
+import 'package:untitled3/SECREEN/App/HOME%20TAP/HomePagePage.dart';
+import 'package:untitled3/SECREEN/App/HOME%20TAP/OrderPage.dart';
+import 'package:untitled3/SECREEN/App/HOME%20TAP/SettingsPage.dart';
 import 'package:untitled3/imageassets.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//

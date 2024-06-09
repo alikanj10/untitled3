@@ -1210,6 +1210,8 @@ class KH_ShadowCard extends StatelessWidget {
   final double? innerPadding;
   final double? innerPaddingvertical;
   final double? outsideMargin;
+  final double? outsideMarginvertical;
+
   final bool? isShadowColored;
   final bool? isGradiant;
 
@@ -1226,6 +1228,7 @@ class KH_ShadowCard extends StatelessWidget {
     this.isShadowColored = false,
     this.isGradiant = false,
     this.innerPaddingvertical,
+    this.outsideMarginvertical,
   });
 
   @override
@@ -1238,7 +1241,9 @@ class KH_ShadowCard extends StatelessWidget {
       height: height ?? null,
       padding: EdgeInsets.symmetric(
           horizontal: innerPadding ?? 0, vertical: innerPaddingvertical ?? 0),
-      margin: EdgeInsets.symmetric(horizontal: outsideMargin ?? 16),
+      margin: EdgeInsets.symmetric(
+          horizontal: outsideMargin ?? 16,
+          vertical: outsideMarginvertical ?? 0),
       child: child,
 
       //@@@@@@@@@@@@//

@@ -73,6 +73,7 @@ class DetilsOrdres extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KH_ShadowCard(
+      innerPaddingvertical: 8,
       child: Column(
         children: [
           Row(children: [
@@ -89,13 +90,17 @@ class DetilsOrdres extends StatelessWidget {
                         fontSize: 15,
                         titleColor: Colors.pink))),
 
-            //=============================================================
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
             const SizedBox(width: 10),
             Container(color: Colors.grey, width: 2, height: 30),
             const SizedBox(width: 10),
 
-            //=============================================================
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
             Expanded(
                 child: KH_App_Title(
@@ -108,13 +113,17 @@ class DetilsOrdres extends StatelessWidget {
             )),
           ]),
 
-          //===================================================================
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
 
           const SizedBox(height: 3),
           const Divider(height: 2, color: Colors.grey),
           const SizedBox(height: 3),
 
-          //===================================================================
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
 
           Row(children: [
             Expanded(
@@ -130,13 +139,17 @@ class DetilsOrdres extends StatelessWidget {
                         fontSize: 15,
                         titleColor: Colors.pink))),
 
-            //===================================================================
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
             const SizedBox(width: 10),
             Container(color: Colors.grey, width: 2, height: 30),
             const SizedBox(width: 10),
 
-            //===================================================================
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
             Expanded(
                 child: KH_App_Title(
@@ -149,13 +162,17 @@ class DetilsOrdres extends StatelessWidget {
             )),
           ]),
 
-          //===================================================================
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
 
           const SizedBox(height: 3),
           const Divider(height: 2, color: Colors.grey),
           const SizedBox(height: 3),
 
-          //===================================================================
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
 
           Row(
             children: [
@@ -172,13 +189,17 @@ class DetilsOrdres extends StatelessWidget {
                           fontSize: 15,
                           titleColor: Colors.pink))),
 
-              //===================================================================
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
               const SizedBox(width: 10),
               Container(color: Colors.grey, width: 2, height: 30),
               const SizedBox(width: 10),
 
-              //===================================================================
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
               Expanded(
                   child: KH_SplashedCard(
