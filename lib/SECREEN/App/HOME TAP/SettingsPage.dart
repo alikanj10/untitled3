@@ -415,22 +415,24 @@ class SectionsOfTheSettingspage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      MaterialButton(
-          padding: const EdgeInsets.all(18),
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-          onPressed: onTap,
-          child: Row(children: [
+    return Column(
+      children: [
+        MaterialButton(
+            padding: const EdgeInsets.all(18),
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
-            Image.asset(image, height: 30, width: 30),
-            const SizedBox(width: 20),
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-            Text(text, style: const TextStyle(fontSize: 16))
-          ])),
-      Divider(height: 2, color: Colors.grey[400])
-    ]);
+            onPressed: onTap,
+            child: Row(children: [
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              Image.asset(image, height: 30, width: 30),
+              const SizedBox(width: 20),
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              Text(text, style: const TextStyle(fontSize: 16))
+            ])),
+        Divider(height: 2, color: Colors.grey[400])
+      ],
+    );
   }
 }
