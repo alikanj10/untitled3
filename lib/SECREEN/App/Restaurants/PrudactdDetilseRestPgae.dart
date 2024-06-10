@@ -52,9 +52,27 @@ class _StateProductDetailsResPage extends State<ProductDetailsResPage> {
                   borderRadius: BorderRadius.circular(20), color: Colors.white),
               child: Column(children: [
                 ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(ImageAsset.eat)),
-
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    children: [
+                      Image.asset(ImageAsset.eat),
+                      KH_ShadowCard(
+                        outsideMarginvertical: 8,
+                        outsideMargin: 8,
+                        bgColor: Colors.grey.withOpacity(0.8),
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            icon: Icon(
+                              Icons.arrow_back_outlined,
+                              size: 30,
+                              color: Colors.pink,
+                            )),
+                      )
+                    ],
+                  ),
+                ),
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
