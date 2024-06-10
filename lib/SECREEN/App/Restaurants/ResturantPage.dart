@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/SECREEN/App/Restaurants/ProductInforamtionRestaurantsPage.dart';
 import 'package:untitled3/VIEW/AdvetismentsSliderCourser.dart';
 import 'package:untitled3/VIEW/CardForDetilseEcommersAndResturant.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
@@ -113,13 +114,18 @@ class _StateRestutant extends State<Restutant> {
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//CardForDetilseEcommersAndResturant
           //@@@@@@@@//@@@@@@@@@//
-          const CardForDetilseEcommersAndResturant(
-              nameresturantorecommers: "القبطان",
-              contentRestOrEcomm: "ِشاورما , كربسيي",
-              openOrClosed: "open",
-              image: ImageAsset.eat,
-              evaluationNumber: " 4.99",
-              pricedelivry: "100")
+          CardForDetilseEcommersAndResturant(
+            nameresturantorecommers: "القبطان",
+            contentRestOrEcomm: "شاورما , كربسيي",
+            openOrClosed: "open",
+            image: ImageAsset.eat,
+            evaluationNumber: " 4.99",
+            pricedelivry: "100",
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (contxet) => PageProductInfoPageForRestaurant()));
+            },
+          )
         ])),
       ),
     );

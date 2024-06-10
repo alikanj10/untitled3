@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/SECREEN/App/Shops/ProductInforamtionShopePage.dart';
 import 'package:untitled3/VIEW/AdvetismentsSliderCourser.dart';
 import 'package:untitled3/VIEW/CardForDetilseEcommersAndResturant.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
@@ -111,11 +112,16 @@ class _StateEcommerce extends State<Ecommerce> {
             //@@@@@@@@//@@@@@@@@@// CardForDetilseEcommersAndResturant
             //@@@@@@@@//@@@@@@@@@//
 
-            const CardForDetilseEcommersAndResturant(
+            CardForDetilseEcommersAndResturant(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          const PageProductInforamtionPageForShops()));
+                },
                 nameresturantorecommers: "AVON",
                 contentRestOrEcomm: "AVON , PARFAN",
                 openOrClosed: "open",
-                image: ImageAsset.eat,
+                image: ImageAsset.avonnn,
                 evaluationNumber: "10.0",
                 pricedelivry: "free")
           ],

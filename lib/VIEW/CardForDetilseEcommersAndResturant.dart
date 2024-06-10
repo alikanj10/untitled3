@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/imageassets.dart';
 
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@       CardForDetilse       @@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@     EcommersAndResturant   @@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@       CardForDetilse       @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@     EcommersAndResturant   @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -28,12 +24,18 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
       required this.image,
       required this.evaluationNumber,
       required this.pricedelivry,
-      this.onTap});
+      required this.onTap});
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@       CardForDetilse       @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@     EcommersAndResturant   @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: KH_ShadowCard(
         innerPadding: 10,
         innerPaddingvertical: 10,
@@ -101,9 +103,9 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Icon(
-                                  Icons.star,
-                                  color: Colors.yellow,
+                                Image.asset(
+                                  ImageAsset.star,
+                                  height: 25,
                                 ),
                                 const SizedBox(
                                   width: 2,
@@ -126,9 +128,9 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Icon(
-                                Icons.delivery_dining_outlined,
-                                color: Colors.red,
+                              Image.asset(
+                                ImageAsset.delivery,
+                                height: 25,
                               ),
                               const SizedBox(
                                 width: 2,
@@ -151,11 +153,10 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
-                                  child: const Icon(
-                                    Icons.offline_pin_rounded,
-                                    color: Colors.green,
-                                  ),
-                                ),
+                                    child: Image.asset(
+                                  ImageAsset.checkbox,
+                                  height: 25,
+                                )),
                                 const SizedBox(
                                   width: 2,
                                 ),
