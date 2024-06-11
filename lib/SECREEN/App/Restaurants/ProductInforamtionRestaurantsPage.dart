@@ -37,7 +37,6 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
-
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Stack(

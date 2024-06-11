@@ -348,20 +348,12 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
   Widget build(BuildContext context) {
     //@@@@@@@@//@@@@@@@@@//
     //@@@@@@@@//@@@@@@@@@//
-
     Map<Object, Widget> children = {
       0: const Text("توصيل"),
       1: const Text("استلام"),
     };
-
     //@@@@@@@@//@@@@@@@@@//
     //@@@@@@@@//@@@@@@@@@//
-
-    int? setectcontroller = 0;
-
-    //@@@@@@@@//@@@@@@@@@//
-    //@@@@@@@@//@@@@@@@@@//
-
     Map<Object, Widget> children2 = {
       0: const Text("بطاقة"),
       1: const Text("كاش"),
@@ -369,31 +361,26 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
     };
     //@@@@@@@@//@@@@@@@@@//
     //@@@@@@@@//@@@@@@@@@//
-
+    int? setectcontroller = 0;
     int? setectcontroller2 = 0;
-
     //@@@@@@@@//@@@@@@@@@//
-
+    //@@@@@@@@//@@@@@@@@@//
     return KH_ShadowCard(
         child: Column(
       children: [
         ExpansionTile(
-
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//   ExpansionTile Payment and delivery settings
             //@@@@@@@@//@@@@@@@@@//
-
             leading: Image.asset(
               ImageAsset.basketShoppimg,
               height: 35,
             ),
             title: const Text("Payment and delivery settings",
                 style: TextStyle(fontSize: 16)),
-
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
-
             children: [
               const Text("نوع الطلب "),
               Container(
@@ -407,17 +394,13 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                           setectcontroller = value as int?;
                         });
                       })),
-
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
-
               const Text(" طريقة الدفع "),
-
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
-
               Container(
                   margin: const EdgeInsets.all(10),
                   width: double.infinity,
@@ -429,11 +412,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                           setectcontroller2 = value as int?;
                         });
                       })),
-
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
-
               MaterialButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
@@ -447,11 +428,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
             ]),
 
         Divider(color: Colors.grey, height: 5),
-
         //@@@@@@@@//@@@@@@@@@//
         //@@@@@@@@//@@@@@@@@@//ExpansionTile address
         //@@@@@@@@//@@@@@@@@@//
-
         ExpansionTile(
             leading: Image.asset(
               ImageAsset.location,
@@ -483,7 +462,6 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
-
                 Expanded(
                   child: MaterialButton(
                       onPressed: () {},
@@ -499,11 +477,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
             ]),
 
         Divider(color: Colors.grey, height: 5),
-
         //@@@@@@@@//@@@@@@@@@//
         //@@@@@@@@//@@@@@@@@@// ExpansionTile from add coupon
         //@@@@@@@@//@@@@@@@@@//
-
         ExpansionTile(
             leading: Image.asset(
               ImageAsset.card,
@@ -515,7 +491,6 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
-
               Container(
                   margin: const EdgeInsets.all(10),
                   child: Row(children: [
@@ -530,11 +505,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                           leftPadding: 0,
                           rightPadding: 0,
                         )),
-
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
-
                     Container(
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -552,11 +525,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                   ]))
             ]),
         const Divider(color: Colors.grey, height: 3),
-
         //@@@@@@@@//@@@@@@@@@//
         //@@@@@@@@//@@@@@@@@@//  ExpansionTile from add note
         //@@@@@@@@//@@@@@@@@@//
-
         ExpansionTile(
             leading: Image.asset(
               ImageAsset.note,
@@ -568,7 +539,6 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
-
               Row(children: [
                 Container(
                     margin: EdgeInsets.all(10),
@@ -583,11 +553,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold)))),
                 const SizedBox(width: 15),
-
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
-
                 Container(
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(20)),
