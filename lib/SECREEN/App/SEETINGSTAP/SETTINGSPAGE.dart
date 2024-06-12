@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
+import 'package:untitled3/SECREEN/AUTH/LOGIN.dart';
 import 'package:untitled3/SECREEN/App/SEETINGSTAP/SETTINGSCOUNTACTUSPAGE.dart';
 import 'package:untitled3/SECREEN/App/SEETINGSTAP/SETTINGSOPENYOURSTOREPAGE.dart';
 import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsAboutTheAppPage.dart';
@@ -107,7 +108,7 @@ class Settings extends StatelessWidget {
               //@@@@@@@@//@@@@@@@@@//
 
               SectionsOfTheSettingspage(
-                text: "Upate noti",
+                text: "Upate notification token",
                 image: ImageAsset.bell,
                 onTap: () {},
               ),
@@ -128,9 +129,12 @@ class Settings extends StatelessWidget {
               //@@@@@@@@//@@@@@@@@@//
 
               SectionsOfTheSettingspage(
-                text: "Log Out",
-                image: ImageAsset.logout,
-                onTap: () {},
+                text: "Log In",
+                image: ImageAsset.login,
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Login()));
+                },
               ),
             ],
           ),
@@ -186,7 +190,10 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
             ),
           ]),
         ),
-        Divider(height: 2, color: Colors.grey[400])
+        Divider(
+          height: 2,
+          color: Colors.grey[400],
+        ),
       ],
     );
   }
