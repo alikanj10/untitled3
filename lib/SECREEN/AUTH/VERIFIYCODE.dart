@@ -18,7 +18,7 @@ class _StateVerifiyCode extends State<VerifiyCode> {
           child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
 
@@ -30,7 +30,7 @@ class _StateVerifiyCode extends State<VerifiyCode> {
               alignment: Alignment.topLeft,
               child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_sharp,
                     color: Colors.pink,
                   )),
@@ -85,7 +85,7 @@ class _StateVerifiyCode extends State<VerifiyCode> {
                 backGroundColor: Colors.pink,
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ResertPasword(),
+                    builder: (context) => const ResertPasword(),
                   ));
                 },
               ),
