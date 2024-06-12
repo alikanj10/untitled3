@@ -3,6 +3,10 @@ class ImageAsset {
   static const String iconsimages = "assets/IconsImages";
   static const String lottie = "assets/lottie";
 
+  //@@@@@@@@//@@@@@@@@@//
+  //@@@@@@@@//@@@@@@@@@//
+  //@@@@@@@@//@@@@@@@@@//
+
   static const String image1 = "$asssetimage/salee.jpg";
   static const String eat = "$asssetimage/00.jpg";
   static const String avonnn = "$asssetimage/avonnn.jpg";
@@ -52,18 +56,18 @@ class ImageAsset {
   //@@@@@@@@//@@@@@@@@@//
 
   static const String faesbook = "$asssetimage/fasbook.png";
-  static const String insta = "$asssetimage/انستاا.jpeg";
+  static const String insta = "$asssetimage/inatagram.jpeg";
   static const String shanpshat = "$asssetimage/snapshat.png";
-  static const String whatsapp = "$asssetimage/واتس اب.png";
-  static const String email = "$asssetimage/البريد.png";
-  static const String web = "$asssetimage/كروم.jpeg";
-  static const String twiter = "$asssetimage/تويتر.png";
-  static const String countacts = "$asssetimage/اتصال.png";
+  static const String whatsapp = "$asssetimage/whatsApp.png";
+  static const String email = "$asssetimage/email.png";
+  static const String web = "$asssetimage/website.jpeg";
+  static const String twiter = "$asssetimage/twitter.png";
+  static const String countacts = "$asssetimage/Countact.png";
 
   //@@@@@@@@//@@@@@@@@@//
   //@@@@@@@@//@@@@@@@@@//  Lottie
   //@@@@@@@@//@@@@@@@@@//
 
-  static const String locationLottie = "$lottie/Animation - 1717942622036.json";
-  static const String officeLottie = "$lottie/Animation - 1717942834820.json";
+  static const String locationLottie = "$lottie/Animation-1717942622036.json";
+  static const String officeLottie = "$lottie/Animation-1717942834820.json";
 }

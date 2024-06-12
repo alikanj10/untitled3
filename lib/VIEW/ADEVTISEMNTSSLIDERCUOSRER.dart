@@ -54,57 +54,58 @@ class _AdvetismentsSliderCourser extends State<AdvetismentsSliderCourser> {
       //@@@@@@@@@@@@@@@@@@@@@//
       //@@@@@@@@@@@@@@@@@@@@@//
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            //@@@@@@@@@@@@@@@@@@@@@//
-            //@@@@@@@@@@@@@@@@@@@@@//
-            Container(
-              // color: Colors.cyanAccent,
-              constraints: const BoxConstraints(
-                maxHeight: 180,
-                maxWidth: double.infinity,
-              ),
-              // color: Colors.black12,
-              //@@@@@@@@@@@@@@@@@@@@@//
-              //@@@@@@@@@@@@@@@@@@@@@//
-              child: CarouselSlider.builder(
-                options: CarouselOptions(
-                  height: 180,
-                  aspectRatio: 16 / 9,
-                  initialPage: 0,
-                  enableInfiniteScroll: true,
-                  reverse: false,
-                  autoPlay: true,
-                  viewportFraction: 1,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  enlargeCenterPage: true,
-                  enlargeFactor: 0.4,
-                  onPageChanged: (index, reson) {
-                    setState(() {
-                      currentPage = index;
-                    });
-                  },
-                  scrollDirection: Axis.horizontal,
-                ),
-                itemCount: 2,
-                itemBuilder: (
-                  BuildContext context,
-                  int index,
-                  int realIndex,
-                ) {
-                  // final item = widget.addvertismentsArray[index];
-                  return const KH_ShadowCard(
-                      width: double.infinity,
-                      child: Center(child: Text("hellow")));
-                },
-              ),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          //@@@@@@@@@@@@@@@@@@@@@//
+          //@@@@@@@@@@@@@@@@@@@@@//
+          Container(
+            // color: Colors.cyanAccent,
+            constraints: const BoxConstraints(
+              maxHeight: 180,
+              maxWidth: double.infinity,
             ),
+            // color: Colors.black12,
+            //@@@@@@@@@@@@@@@@@@@@@//
+            //@@@@@@@@@@@@@@@@@@@@@//
+            child: CarouselSlider.builder(
+              options: CarouselOptions(
+                height: 180,
+                aspectRatio: 16 / 9,
+                initialPage: 0,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: true,
+                viewportFraction: 1,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.4,
+                onPageChanged: (index, reson) {
+                  setState(() {
+                    currentPage = index;
+                  });
+                },
+                scrollDirection: Axis.horizontal,
+              ),
+              itemCount: 2,
+              itemBuilder: (
+                BuildContext context,
+                int index,
+                int realIndex,
+              ) {
+                // final item = widget.addvertismentsArray[index];
+                return const KH_ShadowCard(
+                    width: double.infinity,
+                    child: Center(child: Text("hellow")));
+              },
+            ),
+          ),
 
-            // updateIndicators(context: context),
-          ]),
+          // updateIndicators(context: context),
+        ],
+      ),
     );
   }
 

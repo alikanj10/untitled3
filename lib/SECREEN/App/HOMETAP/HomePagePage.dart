@@ -4,8 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Responsivness.dart';
-import 'package:untitled3/SECREEN/App/Restaurants/ResturantPage.dart';
-import 'package:untitled3/SECREEN/App/Shops/ShopePage.dart';
+import 'package:untitled3/SECREEN/App/HOMETAP/RESTAURANTSPAGE.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/imageassets.dart';
 
@@ -35,10 +34,10 @@ class _StateHomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffF3F6FF),
-        body: SafeArea(
-          child: SingleChildScrollView(
-              child: Column(
+      backgroundColor: const Color(0xffF3F6FF),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
             children: [
               SizedBox(height: 20),
 
@@ -100,8 +99,10 @@ class _StateHomePage extends State<HomePage> {
 
               SizedBox(height: 20),
             ],
-          )),
-        ));
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -209,10 +210,7 @@ class EcommrceAndResHome extends StatelessWidget {
         children: [
           Expanded(
             child: InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Ecommerce()));
-              },
+              onTap: () {},
               child: Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),

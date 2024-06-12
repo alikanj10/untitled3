@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS%20TAP/SettingsAboutTheAppPage.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS%20TAP/SettingsCountactPage.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS%20TAP/SettingsLocationPage.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS%20TAP/SettingsProfilePage.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS%20TAP/SettingsOpenYourStorPage.dart';
+import 'package:untitled3/SECREEN/App/SEETINGSTAP/SETTINGSCOUNTACTUSPAGE.dart';
+import 'package:untitled3/SECREEN/App/SEETINGSTAP/SETTINGSOPENYOURSTOREPAGE.dart';
+import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsAboutTheAppPage.dart';
+import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsLocationPage.dart';
+import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsProfilePage.dart';
 import 'package:untitled3/imageassets.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -33,108 +33,109 @@ class Settings extends StatelessWidget {
             style: TextStyle(fontSize: 18, color: Colors.pink),
           )),
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          children: [
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  ImageAsset.kolmall,
-                  height: 200,
+              Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    ImageAsset.kolmall,
+                    height: 200,
+                  ),
                 ),
               ),
-            ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "Profile",
-              image: ImageAsset.profile,
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SettingsProfilePage()));
-              },
-            ),
+              SectionsOfTheSettingspage(
+                text: "Profile",
+                image: ImageAsset.profile,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsProfilePage()));
+                },
+              ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "Location",
-              image: ImageAsset.location,
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SettingsLocationPage()));
-              },
-            ),
-            const BottomSheetLang(),
+              SectionsOfTheSettingspage(
+                text: "Location",
+                image: ImageAsset.location,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsLocationPage()));
+                },
+              ),
+              const BottomSheetLang(),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            const BottomSheetThemes(),
+              const BottomSheetThemes(),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "Countact Us",
-              image: ImageAsset.phone,
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SettingsCountactPage()));
-              },
-            ),
+              SectionsOfTheSettingspage(
+                text: "Countact Us",
+                image: ImageAsset.phone,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsCountactPage()));
+                },
+              ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "About The App",
-              image: ImageAsset.info,
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SettingsAboutTheAppPage()));
-              },
-            ),
+              SectionsOfTheSettingspage(
+                text: "About The App",
+                image: ImageAsset.info,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsAboutTheAppPage()));
+                },
+              ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "Upate noti",
-              image: ImageAsset.bell,
-              onTap: () {},
-            ),
+              SectionsOfTheSettingspage(
+                text: "Upate noti",
+                image: ImageAsset.bell,
+                onTap: () {},
+              ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "Open your free store with us ",
-              image: ImageAsset.store,
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SettingsOpenYourStorePage()));
-              },
-            ),
+              SectionsOfTheSettingspage(
+                text: "Open your free store with us ",
+                image: ImageAsset.store,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsOpenYourStorePage()));
+                },
+              ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
 
-            SectionsOfTheSettingspage(
-              text: "Log Out",
-              image: ImageAsset.logout,
-              onTap: () {},
-            ),
-          ],
+              SectionsOfTheSettingspage(
+                text: "Log Out",
+                image: ImageAsset.logout,
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
@@ -158,25 +159,33 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
     return Column(
       children: [
         MaterialButton(
-            padding: const EdgeInsets.all(18),
-            onPressed: () {
-              KH_BottomSheet.show_KH_BottomSheet(
-                  context: context,
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-                  child: SectionsLangSettings(
-                    changetoArabic: () {},
-                    changetoEnglish: () {},
-                    changetoturka: () {},
-                  ));
-            },
-            child: Row(children: [
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              Image.asset(ImageAsset.lang, height: 30, width: 30),
-              const SizedBox(width: 20),
-              const Text("Choose language", style: TextStyle(fontSize: 16)),
-            ])),
+          padding: const EdgeInsets.all(18),
+          onPressed: () {
+            KH_BottomSheet.show_KH_BottomSheet(
+                context: context,
+                //@@@@@@@@//@@@@@@@@@//
+                //@@@@@@@@//@@@@@@@@@//
+                child: SectionsLangSettings(
+                  changetoArabic: () {},
+                  changetoEnglish: () {},
+                  changetoturka: () {},
+                ));
+          },
+          child: Row(children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            Image.asset(
+              ImageAsset.lang,
+              height: 30,
+              width: 30,
+            ),
+            const SizedBox(width: 20),
+            const Text(
+              "Choose language",
+              style: TextStyle(fontSize: 16),
+            ),
+          ]),
+        ),
         Divider(height: 2, color: Colors.grey[400])
       ],
     );
@@ -221,9 +230,15 @@ class _StateBottomSheetThemes extends State<BottomSheetThemes> {
             child: Row(children: [
               Image.asset(ImageAsset.themesystem, height: 30, width: 30),
               const SizedBox(width: 20),
-              const Text("Choose Themes", style: TextStyle(fontSize: 16)),
+              const Text(
+                "Choose Themes",
+                style: TextStyle(fontSize: 16),
+              ),
             ])),
-        Divider(height: 2, color: Colors.grey[400])
+        Divider(
+          height: 2,
+          color: Colors.grey[400],
+        )
       ],
     );
   }
@@ -354,7 +369,10 @@ class SectionsThemeSettings extends StatelessWidget {
             image: ImageAsset.themedark,
             onTap: changetodark),
 
-        const Divider(height: 3, color: Colors.grey),
+        const Divider(
+          height: 3,
+          color: Colors.grey,
+        ),
       ],
     );
   }
@@ -380,19 +398,26 @@ class DetilsBottomSheet extends StatelessWidget {
       //@@@@@@@@//@@@@@@@@@//
       onTap: onTap,
       child: Container(
-          height: 80,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            children: [
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              Image.asset(image, height: 30),
-              const SizedBox(width: 20),
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              Text(text, style: TextStyle(fontSize: 18, color: Colors.grey)),
-            ],
-          )),
+        height: 80,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            Image.asset(image, height: 30),
+            const SizedBox(width: 20),
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -418,20 +443,27 @@ class SectionsOfTheSettingspage extends StatelessWidget {
     return Column(
       children: [
         MaterialButton(
-            padding: const EdgeInsets.all(18),
+          padding: const EdgeInsets.all(18),
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          onPressed: onTap,
+          child: Row(children: [
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
-            onPressed: onTap,
-            child: Row(children: [
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              Image.asset(image, height: 30, width: 30),
-              const SizedBox(width: 20),
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              Text(text, style: const TextStyle(fontSize: 16))
-            ])),
-        Divider(height: 2, color: Colors.grey[400])
+            Image.asset(image, height: 30, width: 30),
+            const SizedBox(width: 20),
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            Text(
+              text,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ]),
+        ),
+        Divider(
+          height: 2,
+          color: Colors.grey[400],
+        )
       ],
     );
   }

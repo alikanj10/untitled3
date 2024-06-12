@@ -103,14 +103,15 @@ class DetilsOrdres extends StatelessWidget {
             //@@@@@@@@//@@@@@@@@@//
 
             Expanded(
-                child: KH_App_Title(
-              virticalPadding: 8,
-              horezontalPadding: 0,
-              text: nameEcommer,
-              textAlign: TextAlign.center,
-              fontWeight: FontWeight.normal,
-              fontSize: 15,
-            )),
+              child: KH_App_Title(
+                virticalPadding: 8,
+                horezontalPadding: 0,
+                text: nameEcommer,
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.normal,
+                fontSize: 15,
+              ),
+            ),
           ]),
 
           //@@@@@@@@//@@@@@@@@@//
@@ -152,14 +153,15 @@ class DetilsOrdres extends StatelessWidget {
             //@@@@@@@@//@@@@@@@@@//
 
             Expanded(
-                child: KH_App_Title(
-              text: price,
-              virticalPadding: 0,
-              horezontalPadding: 0,
-              textAlign: TextAlign.center,
-              fontWeight: FontWeight.normal,
-              fontSize: 15,
-            )),
+              child: KH_App_Title(
+                text: price,
+                virticalPadding: 0,
+                horezontalPadding: 0,
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.normal,
+                fontSize: 15,
+              ),
+            ),
           ]),
 
           //@@@@@@@@//@@@@@@@@@//
@@ -202,15 +204,17 @@ class DetilsOrdres extends StatelessWidget {
               //@@@@@@@@//@@@@@@@@@//
 
               Expanded(
-                  child: KH_SplashedCard(
-                      bgColor: Colors.pink[50],
-                      child: KH_App_Title(
-                          virticalPadding: 0,
-                          horezontalPadding: 0,
-                          text: statusOrder,
-                          textAlign: TextAlign.center,
-                          fontSize: 15,
-                          titleColor: Colors.pink))),
+                child: KH_SplashedCard(
+                  bgColor: Colors.pink[50],
+                  child: KH_App_Title(
+                      virticalPadding: 0,
+                      horezontalPadding: 0,
+                      text: statusOrder,
+                      textAlign: TextAlign.center,
+                      fontSize: 15,
+                      titleColor: Colors.pink),
+                ),
+              ),
             ],
           ),
         ],

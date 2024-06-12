@@ -29,23 +29,24 @@ class SettingsLocationPage extends StatelessWidget {
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
       ),
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          children: [
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
-            //@@@@@@@@//@@@@@@@@@//
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
+              //@@@@@@@@//@@@@@@@@@//
 
-            Container(
-              height: 700,
-              alignment: Alignment.center,
-              child: ClipRRect(
-                child: Image.asset(ImageAsset.store),
-              ),
-            )
-          ],
+              Container(
+                height: 700,
+                alignment: Alignment.center,
+                child: ClipRRect(
+                  child: Image.asset(ImageAsset.store),
+                ),
+              )
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

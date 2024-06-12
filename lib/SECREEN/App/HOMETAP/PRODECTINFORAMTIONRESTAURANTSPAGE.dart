@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled3/SECREEN/App/CartPage.dart';
-import 'package:untitled3/SECREEN/App/Restaurants/PrudactdDetilseRestPgae.dart';
+import 'package:untitled3/SECREEN/App/HOMETAP/CARTPAGE.dart';
+import 'package:untitled3/SECREEN/App/HOMETAP/PRUDACTDETILSERESTSURSNTPAGE.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/imageassets.dart';
 
@@ -24,10 +24,10 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          children: [
-            KH_ShadowCard(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              KH_ShadowCard(
                 innerPadding: 10,
                 innerPaddingvertical: 8,
                 bgColor: Colors.white,
@@ -37,6 +37,7 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
+
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Stack(
@@ -122,17 +123,18 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
 
                           Container(width: 2, height: 30, color: Colors.grey),
                           Expanded(
-                              child: KH_ShadowCard(
-                            outsideMarginvertical: 10,
-                            bgColor: Colors.green[100],
-                            outsideMargin: 10,
-                            borderRadius: 5,
-                            child: DelivryAndStarAndOpenOrClose(
-                                colors: Colors.green,
-                                onTap: () {},
-                                text: "مفتوح",
-                                icons: ImageAsset.checkbox),
-                          ))
+                            child: KH_ShadowCard(
+                              outsideMarginvertical: 10,
+                              bgColor: Colors.green[100],
+                              outsideMargin: 10,
+                              borderRadius: 5,
+                              child: DelivryAndStarAndOpenOrClose(
+                                  colors: Colors.green,
+                                  onTap: () {},
+                                  text: "مفتوح",
+                                  icons: ImageAsset.checkbox),
+                            ),
+                          )
                         ]),
 
                     //@@@@@@@@//@@@@@@@@@//
@@ -166,13 +168,15 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                           Container(width: 2, height: 80, color: Colors.grey),
                           Expanded(
                             child: KH_ShadowCard(
-                                bgColor: Colors.orange[100],
-                                outsideMargin: 10,
-                                borderRadius: 10,
-                                child: CartAndInfoAndFavorite(
-                                    onTap: () {},
-                                    text: "معلومات ",
-                                    icons: ImageAsset.info)),
+                              bgColor: Colors.orange[100],
+                              outsideMargin: 10,
+                              borderRadius: 10,
+                              child: CartAndInfoAndFavorite(
+                                onTap: () {},
+                                text: "معلومات ",
+                                icons: ImageAsset.info,
+                              ),
+                            ),
                           ),
 
                           //@@@@@@@@//@@@@@@@@@//
@@ -188,42 +192,49 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                           )
                         ]),
                   ],
-                )),
+                ),
+              ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@// TEXT FORM FILED (SEACRH)
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@// TEXT FORM FILED (SEACRH)
+              //@@@@@@@@//@@@@@@@@@//
 
-            ExpansionTile(
-                title: const Text(" خيارات البحث  ",
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                children: [
-                  KH_TextField(
-                    leadingInnerPrefixIconOrWidget: Icon(Icons.search_rounded),
-                    placeHolder: "Search",
-                    fillColor: Colors.grey[200],
-                    isFilled: true,
-                    trailingInnerPrefixIconOrWidget: Icon(Icons.close_rounded),
-                  )
-                ]),
+              ExpansionTile(
+                  title: const Text("search options",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  children: [
+                    KH_TextField(
+                      borderWidth: 0,
+                      virticalHeight: 15,
+                      borderColor: Colors.grey[100],
+                      fillColor: Colors.grey[200],
+                      isFilled: true,
+                      leadingInnerPrefixIconOrWidget:
+                          Icon(Icons.search_rounded),
+                      placeHolder: "Search",
+                      trailingInnerPrefixIconOrWidget:
+                          Icon(Icons.close_rounded),
+                    )
+                  ]),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//  CardForDetilseResturant
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//  CardForDetilseResturant
+              //@@@@@@@@//@@@@@@@@@//
 
-            CardForDetilseResturant(
-                nameresturantorecommers: "ssss",
-                contentRestOrEcomm: "avon",
-                image: ImageAsset.eat,
-                price: "3100 \$",
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (contxet) => ProductDetailsResPage()));
-                }),
-          ],
+              CardForDetilseResturant(
+                  nameresturantorecommers: "ssss",
+                  contentRestOrEcomm: "avon",
+                  image: ImageAsset.eat,
+                  price: "3100 \$",
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (contxet) => ProductDetailsResPage()));
+                  }),
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }
@@ -249,29 +260,35 @@ class DelivryAndStarAndOpenOrClose extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: onTap,
-        child: Container(
-            alignment: Alignment.center,
-            height: 35,
-            width: 100,
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        height: 35,
+        width: 100,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
-                  Image.asset(
-                    icons,
-                    height: 30,
-                  ),
+            Image.asset(
+              icons,
+              height: 30,
+            ),
 
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
-                  Text(text, style: TextStyle(fontSize: 16, color: colors))
-                ])));
+            Text(
+              text,
+              style: TextStyle(fontSize: 16, color: colors),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -292,29 +309,33 @@ class CartAndInfoAndFavorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: onTap,
-        child: Container(
-            padding: const EdgeInsets.all(8),
-            height: 80,
-            width: 100,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        height: 80,
+        width: 100,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
-                  Image.asset(icons, height: 30),
+            Image.asset(icons, height: 30),
 
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
+            //@@@@@@@@//@@@@@@@@@//
 
-                  Text(text,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold))
-                ])));
+            Text(
+              text,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -333,26 +354,29 @@ class Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KH_ShadowCard(
-        bgColor: Colors.grey[300],
-        borderRadius: 10,
-        outsideMargin: 10,
-        outsideMarginvertical: 10,
-        child: Column(children: [
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
+      bgColor: Colors.grey[300],
+      borderRadius: 10,
+      outsideMargin: 10,
+      outsideMarginvertical: 10,
+      child: Column(children: [
+        //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
 
-          IconButton(
-              onPressed: addOrDeleteFavorite,
-              icon: const Icon(Icons.favorite_border, size: 35)),
+        IconButton(
+            onPressed: addOrDeleteFavorite,
+            icon: const Icon(Icons.favorite_border, size: 35)),
 
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
 
-          Text(text,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
-        ]));
+        Text(
+          text,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ]),
+    );
   }
 }
 

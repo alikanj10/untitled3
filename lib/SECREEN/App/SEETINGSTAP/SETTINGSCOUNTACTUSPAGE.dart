@@ -38,54 +38,55 @@ class SettingsCountactPage extends StatelessWidget {
             style: TextStyle(fontSize: 18, color: Colors.pink),
           )),
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Column(
-          children: [
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
-            //@@@@@@@@//@@@@@@@@@//
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
+              //@@@@@@@@//@@@@@@@@@//
 
-            Container(
-              alignment: Alignment.center,
-              height: 200,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(ImageAsset.kolmall),
+              Container(
+                alignment: Alignment.center,
+                height: 200,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(ImageAsset.kolmall),
+                ),
               ),
-            ),
 
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@// TYPE CONUTACTS
-            //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@// TYPE CONUTACTS
+              //@@@@@@@@//@@@@@@@@@//
 
-            Container(
-              height: 600,
-              child: GridView.builder(
-                scrollDirection: Axis.vertical,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                itemCount: contentsCountact.length,
-                itemBuilder: (context, index) {
-                  return KH_ShadowCard(
-                      outsideMarginvertical: 30,
-                      borderRadius: 30,
-                      height: double.infinity,
-                      innerPaddingvertical: 30,
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            "${contentsCountact[index]["image"]}",
-                            height: 40,
-                          ),
-                          Text('${contentsCountact[index]["text"]}')
-                        ],
-                      ));
-                },
+              Container(
+                height: 600,
+                child: GridView.builder(
+                  scrollDirection: Axis.vertical,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemCount: contentsCountact.length,
+                  itemBuilder: (context, index) {
+                    return KH_ShadowCard(
+                        outsideMarginvertical: 30,
+                        borderRadius: 30,
+                        height: double.infinity,
+                        innerPaddingvertical: 30,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              "${contentsCountact[index]["image"]}",
+                              height: 40,
+                            ),
+                            Text('${contentsCountact[index]["text"]}')
+                          ],
+                        ));
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

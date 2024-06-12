@@ -25,32 +25,33 @@ class _StateProductDetailsResPage extends State<ProductDetailsResPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //@@@@@@@@//@@@@@@@@@//
+      //@@@@@@@@//@@@@@@@@@// bottomNavigationBar
+      //@@@@@@@@//@@@@@@@@@//
 
-        //@@@@@@@@//@@@@@@@@@//
-        //@@@@@@@@//@@@@@@@@@// bottomNavigationBar
-        //@@@@@@@@//@@@@@@@@@//
-
-        bottomNavigationBar: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            margin: const EdgeInsets.all(15),
-            child: NavigatorBarToPrudactdetilesRest(
-              priceEnd: '300',
-              onadd: () {},
-              onremove: () {},
-              count: "2",
-            )),
-        backgroundColor: const Color(0xffF3F6FF),
-        body: ListView(children: [
+      bottomNavigationBar: Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          margin: const EdgeInsets.all(15),
+          child: NavigatorBarToPrudactdetilesRest(
+            priceEnd: '300',
+            onadd: () {},
+            onremove: () {},
+            count: "2",
+          )),
+      backgroundColor: const Color(0xffF3F6FF),
+      body: ListView(
+        children: [
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
 
           Container(
-              margin: const EdgeInsets.all(15),
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.white),
-              child: Column(children: [
+            margin: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20), color: Colors.white),
+            child: Column(
+              children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Stack(
@@ -97,8 +98,12 @@ class _StateProductDetailsResPage extends State<ProductDetailsResPage> {
                   price: '200 \$',
                   addtocart: () {},
                 )
-              ])),
-        ]));
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -123,43 +128,46 @@ class NavigatorBarToPrudactdetilesRest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KH_ShadowCard(
-        outsideMargin: 0,
-        innerPaddingvertical: 10,
-        innerPadding: 10,
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+      outsideMargin: 0,
+      innerPaddingvertical: 10,
+      innerPadding: 10,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
 
           Expanded(
             child: KH_ShadowCard(
-                bgColor: Colors.pink,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      //@@@@@@@@//@@@@@@@@@//
-                      //@@@@@@@@//@@@@@@@@@//
-                      //@@@@@@@@//@@@@@@@@@//
+              bgColor: Colors.pink,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
 
-                      Text(
-                        priceEnd,
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    Text(
+                      priceEnd,
+                      style: TextStyle(color: Colors.white),
+                    ),
 
-                      //@@@@@@@@//@@@@@@@@@//
-                      //@@@@@@@@//@@@@@@@@@//
-                      //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//
 
-                      MaterialButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          onPressed: onadd,
-                          child: const Text("اضافة ",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold)))
-                    ])),
+                    MaterialButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        onPressed: onadd,
+                        child: const Text("اضافة ",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)))
+                  ]),
+            ),
           ),
 
           //@@@@@@@@//@@@@@@@@@//
@@ -168,9 +176,10 @@ class NavigatorBarToPrudactdetilesRest extends StatelessWidget {
 
           Expanded(
             child: Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                child: Row(children: [
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                children: [
                   Expanded(
                     child: Container(
                         decoration: BoxDecoration(
@@ -207,19 +216,25 @@ class NavigatorBarToPrudactdetilesRest extends StatelessWidget {
                   const SizedBox(width: 5),
                   Expanded(
                     child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.pink,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: IconButton(
-                            onPressed: onremove,
-                            icon: const Icon(
-                              Icons.remove,
-                              color: Colors.white,
-                            ))),
+                      decoration: BoxDecoration(
+                          color: Colors.pink,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: IconButton(
+                        onPressed: onremove,
+                        icon: const Icon(
+                          Icons.remove,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   )
-                ])),
+                ],
+              ),
+            ),
           )
-        ]));
+        ],
+      ),
+    );
   }
 }
 
@@ -262,19 +277,20 @@ class ContainerPriceAndCartRest extends StatelessWidget {
         child: InkWell(
           onTap: addtocart,
           child: KH_ShadowCard(
-              bgColor: Colors.green[100],
-              innerPaddingvertical: 8,
-              borderRadius: 10,
-              child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
+            bgColor: Colors.green[100],
+            innerPaddingvertical: 8,
+            borderRadius: 10,
+            child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  //@@@@@@@@//@@@@@@@@@//
+                  //@@@@@@@@//@@@@@@@@@//
+                  //@@@@@@@@//@@@@@@@@@//
 
-                    Text("أضف للسلة "),
-                    Icon(Icons.shopping_cart_outlined)
-                  ])),
+                  Text("أضف للسلة "),
+                  Icon(Icons.shopping_cart_outlined)
+                ]),
+          ),
         ),
       ),
     ]);
