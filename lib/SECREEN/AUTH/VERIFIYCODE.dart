@@ -3,12 +3,24 @@ import 'package:untitled3/IMAGEASSETS.dart';
 import 'package:untitled3/SECREEN/AUTH/RESERTPASSWORD.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@         VerifiyCode        @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
 class VerifiyCode extends StatefulWidget {
   const VerifiyCode({super.key});
 
   @override
   State<VerifiyCode> createState() => _StateVerifiyCode();
 }
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@         VerifiyCode        @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
 class _StateVerifiyCode extends State<VerifiyCode> {
   @override
@@ -110,6 +122,10 @@ class _StateVerifiyCode extends State<VerifiyCode> {
                 onPressed: () {},
               ),
             ),
+
+            //@@@@@@@@@@@@@@@@@
+            //@@@@@@@@@@@@@@@@@
+            //@@@@@@@@@@@@@@@@@
           ],
         ),
       )),

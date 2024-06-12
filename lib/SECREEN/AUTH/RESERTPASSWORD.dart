@@ -3,6 +3,12 @@ import 'package:untitled3/IMAGEASSETS.dart';
 import 'package:untitled3/SECREEN/AUTH/LOGIN.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@       ResertPasword        @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
 class ResertPasword extends StatefulWidget {
   const ResertPasword({super.key});
 
@@ -11,6 +17,12 @@ class ResertPasword extends StatefulWidget {
 }
 
 class _StateResertPasword extends State<ResertPasword> {
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@       ResertPasword        @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,6 +104,10 @@ class _StateResertPasword extends State<ResertPasword> {
                   },
                 ),
               ),
+
+              //@@@@@@@@@@@@@@@@@@@@
+              //@@@@@@@@@@@@@@@@@@@@
+              //@@@@@@@@@@@@@@@@@@@@
             ],
           ),
         ),
