@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled3/SECREEN/App/HOMETAP/CARTPAGE.dart';
-import 'package:untitled3/SECREEN/App/HOMETAP/PRUDACTDETILSERESTSURSNTPAGE.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/CartPage.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/PrudactDetilesRestaurantPage.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/imageassets.dart';
 
@@ -51,7 +51,7 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_back_outlined,
                                   size: 30,
                                   color: Colors.pink,
@@ -154,7 +154,8 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                                   onTap: () {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (contxet) => Cart()));
+                                            builder: (contxet) =>
+                                                const Cart()));
                                   },
                                   text: "السلة ",
                                   icons: ImageAsset.cart),
@@ -204,18 +205,66 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   children: [
-                    KH_TextField(
-                      borderWidth: 0,
-                      virticalHeight: 15,
-                      borderColor: Colors.grey[100],
-                      fillColor: Colors.grey[200],
-                      isFilled: true,
-                      leadingInnerPrefixIconOrWidget:
-                          Icon(Icons.search_rounded),
-                      placeHolder: "Search",
-                      trailingInnerPrefixIconOrWidget:
-                          Icon(Icons.close_rounded),
-                    )
+                    KH_ShadowCard(
+                        outsideMarginvertical: 20,
+                        child: Column(
+                          children: [
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+
+                            KH_TextField(
+                              borderWidth: 0,
+                              virticalHeight: 15,
+                              borderRadius: 20,
+                              borderColor: Colors.grey[100],
+                              fillColor: Colors.grey[200],
+                              isFilled: true,
+                              leadingInnerPrefixIconOrWidget:
+                                  const Icon(Icons.search_rounded),
+                              placeHolder: "Search",
+                              trailingInnerPrefixIconOrWidget:
+                                  const Icon(Icons.close_rounded),
+                            ),
+
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+
+                            ClipRRect(
+                                borderRadius: BorderRadius.circular(200),
+                                child: Image.asset(
+                                  ImageAsset.matam,
+                                  width: 80,
+                                  height: 80,
+                                )),
+
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+
+                            const Text("data"),
+
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+                            //@@@@@@@@@@@@@@@@@@@
+
+                            Container(
+                              margin: const EdgeInsets.all(20),
+                              height: 60,
+                              decoration: BoxDecoration(
+                                  color: Colors.pink[50],
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: KH_Bordered_Bottun(
+                                onPressed: () {},
+                                title: "Serach",
+                                width: double.infinity,
+                                textColor: Colors.pink,
+                                borderColor: Colors.pink[50],
+                              ),
+                            )
+                          ],
+                        )),
                   ]),
 
               //@@@@@@@@//@@@@@@@@@//
@@ -229,7 +278,7 @@ class PageProductInfoPageForRestaurant extends StatelessWidget {
                   price: "3100 \$",
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (contxet) => ProductDetailsResPage()));
+                        builder: (contxet) => const ProductDetailsResPage()));
                   }),
             ],
           ),
@@ -503,7 +552,7 @@ class CardForDetilseResturant extends StatelessWidget {
                                   const SizedBox(
                                     width: 2,
                                   ),
-                                  Text("Add Cart")
+                                  const Text("Add Cart")
                                 ],
                               ),
                             ),

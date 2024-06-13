@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
-import 'package:untitled3/SECREEN/AUTH/LOGIN.dart';
-import 'package:untitled3/SECREEN/App/SEETINGSTAP/SETTINGSCOUNTACTUSPAGE.dart';
-import 'package:untitled3/SECREEN/App/SEETINGSTAP/SETTINGSOPENYOURSTOREPAGE.dart';
+import 'package:untitled3/SECREEN/AUTH/LoginPage.dart';
+import 'package:untitled3/SECREEN/App/SEETINGS_TAP/SETTINGSCOUNTACTUSPAGE.dart';
+import 'package:untitled3/SECREEN/App/SEETINGS_TAP/SETTINGSOPENYOURSTOREPAGE.dart';
 import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsAboutTheAppPage.dart';
 import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsLocationPage.dart';
 import 'package:untitled3/SECREEN/App/SEETINGSTAP/SettingsProfilePage.dart';
