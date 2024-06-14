@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
 import 'package:untitled3/SECREEN/AUTH/LoginPage.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS_TAP/SETTINGSABOUTTHEAPPPAGE.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS_TAP/SETTINGSOPENYOURSTOREPAGE.dart';
-import 'package:untitled3/SECREEN/App/SEETINGS_TAP/SETTINGSPROFILEPAGE.dart';
+import 'package:untitled3/SETTINGS_TAP/SettingsAboutTheAppPage.dart';
+
 import 'package:untitled3/SETTINGS_TAP/SettingsCountactUsPage.dart';
 import 'package:untitled3/SETTINGS_TAP/SettingsLocationPage.dart';
+import 'package:untitled3/SETTINGS_TAP/SettingsOpenYourStorePage.dart';
+import 'package:untitled3/SETTINGS_TAP/SettingsProfilePage.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
