@@ -77,7 +77,7 @@ class SettingsOpenYourStorePage extends StatelessWidget {
                               "${contentsCountact[index]["image"]}",
                               height: 40,
                             ),
-                            Text('${contentsCountact[index]["text"]}')
+                            Text('${contentsCountact[index]["text"]}') ,
                           ],
                         ));
                   },
