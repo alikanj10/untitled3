@@ -28,6 +28,19 @@ class HomePage extends StatefulWidget {
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
 class _StateHomePage extends State<HomePage> {
+  bool isloading = true;
+
+  @override
+  void initState() {
+    isloading = false;
+    Future.delayed(const Duration(seconds: 6), () {
+      setState(() {
+        isloading = true;
+      });
+    });
+    super.initState();
+  }
+
   List imagename = [ImageAsset.eat, ImageAsset.ecommerce];
   Map<dynamic, dynamic> name = {0: "AVON", 1: "PEITZA"};
 
@@ -35,73 +48,81 @@ class _StateHomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 20),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@// APPBARHOME
-              //@@@@@@@@//@@@@@@@@@//
-              AppBarHome(
-                onPressdbell: () {},
-                onPressdlocation: () {},
-                onPressdref: () {},
+      body: isloading == false
+          ? Center(
+              child: CircularProgressIndicator(
+                color: Colors.pink,
               ),
+            )
+          : SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 20),
 
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@// HomePageAdvetismentsSliderCourser
-              //@@@@@@@@//@@@@@@@@@//
-              HomePageAdvetismentsSliderCourser(),
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// APPBARHOME
+                    //@@@@@@@@//@@@@@@@@@//
+                    AppBarHome(
+                      onPressdbell: () {},
+                      onPressdlocation: () {},
+                      onPressdref: () {},
+                    ),
 
-              //=======================================================================
-              KH_App_Title(
-                text: "hungry ? wanna shop ?",
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// HomePageAdvetismentsSliderCourser
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    HomePageAdvetismentsSliderCourser(),
+
+                    //=======================================================================
+                    KH_App_Title(
+                      text: "hungry ? wanna shop ?",
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                    ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// EcommrceAndResHome
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    EcommrceAndResHome(),
+
+                    KH_App_Title(text: "Top list", fontSize: 18),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// AdvetismentSlider
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    AdvetismentSlider(
+                        logooimageres: ImageAsset.eat,
+                        text: "text",
+                        widthimage: 340,
+                        withOpacity: 340,
+                        leftlogo: 210),
+
+                    //=======================================================================
+                    KH_App_Title(
+                      text: "Latest we received header",
+                      fontSize: 18,
+                    ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// AdvetismentSlider
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    AdvetismentSlider(
+                        logooimageres: ImageAsset.eat,
+                        text: "text",
+                        widthimage: 240,
+                        withOpacity: 240,
+                        leftlogo: 140),
+
+                    SizedBox(height: 20),
+                  ],
+                ),
               ),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@// EcommrceAndResHome
-              //@@@@@@@@//@@@@@@@@@//
-              EcommrceAndResHome(),
-
-              KH_App_Title(text: "Top list", fontSize: 18),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@// AdvetismentSlider
-              //@@@@@@@@//@@@@@@@@@//
-
-              AdvetismentSlider(
-                  logooimageres: ImageAsset.eat,
-                  text: "text",
-                  widthimage: 340,
-                  withOpacity: 340,
-                  leftlogo: 210),
-
-              //=======================================================================
-              KH_App_Title(
-                text: "Latest we received header",
-                fontSize: 18,
-              ),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@// AdvetismentSlider
-              //@@@@@@@@//@@@@@@@@@//
-
-              AdvetismentSlider(
-                  logooimageres: ImageAsset.eat,
-                  text: "text",
-                  widthimage: 240,
-                  withOpacity: 240,
-                  leftlogo: 140),
-
-              SizedBox(height: 20),
-            ],
-          ),
-        ),
-      ),
+            ),
     );
   }
 }
@@ -199,8 +220,26 @@ class AppBarHome extends StatelessWidget {
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
-class EcommrceAndResHome extends StatelessWidget {
+class EcommrceAndResHome extends StatefulWidget {
   const EcommrceAndResHome({super.key});
+
+  @override
+  State<EcommrceAndResHome> createState() => _StateEcommrceAndResHome();
+}
+
+class _StateEcommrceAndResHome extends State<EcommrceAndResHome> {
+  bool isloading = true;
+
+  @override
+  void initState() {
+    isloading = false;
+    Future.delayed(const Duration(seconds: 3), () {
+      setState(() {
+        isloading = true;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -211,14 +250,22 @@ class EcommrceAndResHome extends StatelessWidget {
           Expanded(
             child: InkWell(
               onTap: () {},
-              child: Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    ImageAsset.ecommerce,
-                  ),
-                ),
-              ),
+              child: isloading == false
+                  ? Center(
+                      child: CircularProgressIndicator(
+                        color: Colors.pink,
+                      ),
+                    )
+                  : KH_ShadowCard(
+                      outsideMargin: 0,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          fit: BoxFit.cover,
+                          ImageAsset.ecommerce,
+                        ),
+                      ),
+                    ),
             ),
           ),
 
@@ -230,14 +277,22 @@ class EcommrceAndResHome extends StatelessWidget {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => Restutant()));
               },
-              child: Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    ImageAsset.matam,
-                  ),
-                ),
-              ),
+              child: isloading == false
+                  ? Center(
+                      child: CircularProgressIndicator(
+                        color: Colors.pink,
+                      ),
+                    )
+                  : KH_ShadowCard(
+                      outsideMargin: 0,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          ImageAsset.matam,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
             ),
           )
         ],
@@ -245,7 +300,6 @@ class EcommrceAndResHome extends StatelessWidget {
     );
   }
 }
-
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@      AdvetismentSlider     @@@@@@@@@@@@@@@@@@@@@@@@//

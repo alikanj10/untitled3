@@ -22,6 +22,19 @@ class ProductDetailsResPage extends StatefulWidget {
 }
 
 class _StateProductDetailsResPage extends State<ProductDetailsResPage> {
+  bool isloading = true;
+
+  @override
+  void initState() {
+    isloading = false;
+    Future.delayed(const Duration(seconds: 3), () {
+      setState(() {
+        isloading = true;
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,70 +52,77 @@ class _StateProductDetailsResPage extends State<ProductDetailsResPage> {
             count: "2",
           )),
       backgroundColor: const Color(0xffF3F6FF),
-      body: ListView(
-        children: [
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-
-          Container(
-            margin: const EdgeInsets.all(15),
-            padding: const EdgeInsets.all(15),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.white),
-            child: Column(
+      body: isloading == false
+          ? Center(
+              child: CircularProgressIndicator(
+                color: Colors.pink,
+              ),
+            )
+          : ListView(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Stack(
+                //@@@@@@@@//@@@@@@@@@//
+                //@@@@@@@@//@@@@@@@@@//
+                //@@@@@@@@//@@@@@@@@@//
+
+                Container(
+                  margin: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white),
+                  child: Column(
                     children: [
-                      Image.asset(ImageAsset.eat),
-                      KH_ShadowCard(
-                        outsideMarginvertical: 8,
-                        outsideMargin: 8,
-                        bgColor: Colors.grey.withOpacity(0.8),
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            icon: Icon(
-                              Icons.arrow_back_outlined,
-                              size: 30,
-                              color: Colors.pink,
-                            )),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Stack(
+                          children: [
+                            Image.asset(ImageAsset.eat),
+                            KH_ShadowCard(
+                              outsideMarginvertical: 8,
+                              outsideMargin: 8,
+                              bgColor: Colors.grey.withOpacity(0.8),
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  icon: Icon(
+                                    Icons.arrow_back_outlined,
+                                    size: 30,
+                                    color: Colors.pink,
+                                  )),
+                            )
+                          ],
+                        ),
+                      ),
+                      //@@@@@@@@//@@@@@@@@@//
+                      //@@@@@@@@//@@@@@@@@@//
+                      //@@@@@@@@//@@@@@@@@@//
+
+                      const SizedBox(height: 20),
+                      KH_App_Title(
+                        text: "فروج بروستيد",
+                        virticalPadding: 0,
+                        textAlign: TextAlign.center,
+                      ),
+                      KH_App_Title(
+                        virticalPadding: 10,
+                        text: " البروستد",
+                        textAlign: TextAlign.center,
+                      ),
+
+                      //@@@@@@@@//@@@@@@@@@//
+                      //@@@@@@@@//@@@@@@@@@// ContainerPriceAndCart
+                      //@@@@@@@@//@@@@@@@@@//
+
+                      ContainerPriceAndCartRest(
+                        price: '200 \$',
+                        addtocart: () {},
                       )
                     ],
                   ),
                 ),
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@//
-
-                const SizedBox(height: 20),
-                KH_App_Title(
-                  text: "فروج بروستيد",
-                  virticalPadding: 0,
-                  textAlign: TextAlign.center,
-                ),
-                KH_App_Title(
-                  virticalPadding: 10,
-                  text: " البروستد",
-                  textAlign: TextAlign.center,
-                ),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// ContainerPriceAndCart
-                //@@@@@@@@//@@@@@@@@@//
-
-                ContainerPriceAndCartRest(
-                  price: '200 \$',
-                  addtocart: () {},
-                )
               ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }

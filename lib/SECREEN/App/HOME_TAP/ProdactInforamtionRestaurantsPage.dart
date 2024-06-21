@@ -10,284 +10,315 @@ import 'package:untitled3/VIEW/KH_Componants.dart';
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
-class PageProductInfoPageForRestaurant extends StatelessWidget {
+class PageProductInfoPageForRestaurant extends StatefulWidget {
   const PageProductInfoPageForRestaurant({super.key});
+
+  @override
+  State<PageProductInfoPageForRestaurant> createState() =>
+      _StatePageProductInfoPageForRestaurant();
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@    PageProductItemPage     @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@       ForRestaurants       @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+}
+
+class _StatePageProductInfoPageForRestaurant
+    extends State<PageProductInfoPageForRestaurant> {
+  bool isloading = true;
+
+  @override
+  void initState() {
+    isloading = false;
+    Future.delayed(const Duration(seconds: 3), () {
+      setState(() {
+        isloading = true;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              KH_ShadowCard(
-                innerPadding: 10,
-                innerPaddingvertical: 8,
-                bgColor: Colors.white,
-                outsideMarginvertical: 10,
+      body: isloading == false
+          ? Center(
+              child: CircularProgressIndicator(
+                color: Colors.pink,
+              ),
+            )
+          : SafeArea(
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Stack(
+                    KH_ShadowCard(
+                      innerPadding: 10,
+                      innerPaddingvertical: 8,
+                      bgColor: Colors.white,
+                      outsideMarginvertical: 10,
+                      child: Column(
                         children: [
-                          Image.asset(ImageAsset.eat),
-                          KH_ShadowCard(
-                            outsideMarginvertical: 8,
-                            outsideMargin: 8,
-                            bgColor: Colors.grey.withOpacity(0.8),
-                            child: IconButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                icon: const Icon(
-                                  Icons.arrow_back_outlined,
-                                  size: 30,
-                                  color: Colors.pink,
-                                )),
-                          )
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Stack(
+                              children: [
+                                Image.asset(ImageAsset.eat),
+                                KH_ShadowCard(
+                                  outsideMarginvertical: 8,
+                                  outsideMargin: 8,
+                                  bgColor: Colors.grey.withOpacity(0.8),
+                                  child: IconButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      icon: const Icon(
+                                        Icons.arrow_back_outlined,
+                                        size: 30,
+                                        color: Colors.pink,
+                                      )),
+                                )
+                              ],
+                            ),
+                          ),
+
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+
+                          KH_App_Title(
+                            virticalPadding: 8,
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            text: "Eat",
+                            textAlign: TextAlign.center,
+                          ),
+                          KH_App_Title(
+                            virticalPadding: 0,
+                            fontSize: 16,
+                            text: "Shawemaa . accessoies",
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 15),
+
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                    child: KH_ShadowCard(
+                                        bgColor: Colors.orange[100],
+                                        outsideMargin: 10,
+                                        borderRadius: 5,
+                                        child: DelivryAndStarAndOpenOrClose(
+                                          colors: Colors.brown,
+                                          text: "5",
+                                          icons: ImageAsset.star,
+                                          onTap: () {},
+                                        ))),
+
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//
+
+                                Container(
+                                    width: 2, height: 30, color: Colors.grey),
+                                Expanded(
+                                  child: KH_ShadowCard(
+                                    bgColor: Colors.blue[100],
+                                    outsideMargin: 10,
+                                    borderRadius: 5,
+                                    child: DelivryAndStarAndOpenOrClose(
+                                        colors: Colors.blue,
+                                        onTap: () {},
+                                        text: "Free",
+                                        icons: ImageAsset.delivery),
+                                  ),
+                                ),
+
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//
+
+                                Container(
+                                    width: 2, height: 30, color: Colors.grey),
+                                Expanded(
+                                  child: KH_ShadowCard(
+                                    outsideMarginvertical: 10,
+                                    bgColor: Colors.green[100],
+                                    outsideMargin: 10,
+                                    borderRadius: 5,
+                                    child: DelivryAndStarAndOpenOrClose(
+                                        colors: Colors.green,
+                                        onTap: () {},
+                                        text: "مفتوح",
+                                        icons: ImageAsset.checkbox),
+                                  ),
+                                )
+                              ]),
+
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+
+                          const Divider(height: 10, color: Colors.grey),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: KH_ShadowCard(
+                                    bgColor: Colors.green[100],
+                                    outsideMargin: 10,
+                                    borderRadius: 10,
+                                    child: CartAndInfoAndFavorite(
+                                        onTap: () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (contxet) =>
+                                                      const Cart()));
+                                        },
+                                        text: "السلة ",
+                                        icons: ImageAsset.cart),
+                                  ),
+                                ),
+
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//
+
+                                Container(
+                                    width: 2, height: 80, color: Colors.grey),
+                                Expanded(
+                                  child: KH_ShadowCard(
+                                    bgColor: Colors.orange[100],
+                                    outsideMargin: 10,
+                                    borderRadius: 10,
+                                    child: CartAndInfoAndFavorite(
+                                      onTap: () {},
+                                      text: "معلومات ",
+                                      icons: ImageAsset.info,
+                                    ),
+                                  ),
+                                ),
+
+                                //@@@@@@@@//@@@@@@@@@//
+                                //@@@@@@@@//@@@@@@@@@//  Favorite
+                                //@@@@@@@@//@@@@@@@@@//
+
+                                Container(
+                                    width: 2, height: 80, color: Colors.grey),
+                                Expanded(
+                                  child: Favorite(
+                                    text: "المفصلة",
+                                    addOrDeleteFavorite: () {},
+                                  ),
+                                )
+                              ]),
                         ],
                       ),
                     ),
 
                     //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-
-                    KH_App_Title(
-                      virticalPadding: 8,
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      text: "Eat",
-                      textAlign: TextAlign.center,
-                    ),
-                    KH_App_Title(
-                      virticalPadding: 0,
-                      fontSize: 16,
-                      text: "Shawemaa . accessoies",
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 15),
-
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// TEXT FORM FILED (SEACRH)
                     //@@@@@@@@//@@@@@@@@@//
 
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    ExpansionTile(
+                        title: const Text("search options",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold)),
                         children: [
-                          Expanded(
-                              child: KH_ShadowCard(
-                                  bgColor: Colors.orange[100],
-                                  outsideMargin: 10,
-                                  borderRadius: 5,
-                                  child: DelivryAndStarAndOpenOrClose(
-                                    colors: Colors.brown,
-                                    text: "5",
-                                    icons: ImageAsset.star,
-                                    onTap: () {},
-                                  ))),
+                          KH_ShadowCard(
+                              outsideMarginvertical: 20,
+                              child: Column(
+                                children: [
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
 
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//
+                                  KH_TextField(
+                                    borderWidth: 0,
+                                    virticalHeight: 15,
+                                    borderRadius: 20,
+                                    borderColor: Colors.grey[100],
+                                    fillColor: Colors.grey[200],
+                                    isFilled: true,
+                                    leadingInnerPrefixIconOrWidget:
+                                        const Icon(Icons.search_rounded),
+                                    placeHolder: "Search",
+                                    trailingInnerPrefixIconOrWidget:
+                                        const Icon(Icons.close_rounded),
+                                  ),
 
-                          Container(width: 2, height: 30, color: Colors.grey),
-                          Expanded(
-                            child: KH_ShadowCard(
-                              bgColor: Colors.blue[100],
-                              outsideMargin: 10,
-                              borderRadius: 5,
-                              child: DelivryAndStarAndOpenOrClose(
-                                  colors: Colors.blue,
-                                  onTap: () {},
-                                  text: "Free",
-                                  icons: ImageAsset.delivery),
-                            ),
-                          ),
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
 
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//
+                                  ClipRRect(
+                                      borderRadius: BorderRadius.circular(200),
+                                      child: Image.asset(
+                                        ImageAsset.matam,
+                                        width: 80,
+                                        height: 80,
+                                      )),
 
-                          Container(width: 2, height: 30, color: Colors.grey),
-                          Expanded(
-                            child: KH_ShadowCard(
-                              outsideMarginvertical: 10,
-                              bgColor: Colors.green[100],
-                              outsideMargin: 10,
-                              borderRadius: 5,
-                              child: DelivryAndStarAndOpenOrClose(
-                                  colors: Colors.green,
-                                  onTap: () {},
-                                  text: "مفتوح",
-                                  icons: ImageAsset.checkbox),
-                            ),
-                          )
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
+
+                                  const Text("data"),
+
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
+                                  //@@@@@@@@@@@@@@@@@@@
+
+                                  Container(
+                                    margin: const EdgeInsets.all(20),
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                        color: Colors.pink[50],
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: KH_Bordered_Bottun(
+                                      onPressed: () {},
+                                      title: "Serach",
+                                      width: double.infinity,
+                                      textColor: Colors.pink,
+                                      borderColor: Colors.pink[50],
+                                    ),
+                                  )
+                                ],
+                              )),
                         ]),
 
                     //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@//  CardForDetilseResturant
                     //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
 
-                    const Divider(height: 10, color: Colors.grey),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Expanded(
-                            child: KH_ShadowCard(
-                              bgColor: Colors.green[100],
-                              outsideMargin: 10,
-                              borderRadius: 10,
-                              child: CartAndInfoAndFavorite(
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (contxet) =>
-                                                const Cart()));
-                                  },
-                                  text: "السلة ",
-                                  icons: ImageAsset.cart),
-                            ),
-                          ),
-
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//
-
-                          Container(width: 2, height: 80, color: Colors.grey),
-                          Expanded(
-                            child: KH_ShadowCard(
-                              bgColor: Colors.orange[100],
-                              outsideMargin: 10,
-                              borderRadius: 10,
-                              child: CartAndInfoAndFavorite(
-                                onTap: () {},
-                                text: "معلومات ",
-                                icons: ImageAsset.info,
-                              ),
-                            ),
-                          ),
-
-                          //@@@@@@@@//@@@@@@@@@//
-                          //@@@@@@@@//@@@@@@@@@//  Favorite
-                          //@@@@@@@@//@@@@@@@@@//
-
-                          Container(width: 2, height: 80, color: Colors.grey),
-                          Expanded(
-                            child: Favorite(
-                              text: "المفصلة",
-                              addOrDeleteFavorite: () {},
-                            ),
-                          )
-                        ]),
+                    CardForDetilseResturant(
+                        nameresturantorecommers: "ssss",
+                        contentRestOrEcomm: "avon",
+                        image: ImageAsset.eat,
+                        price: "3100 \$",
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (contxet) =>
+                                  const ProductDetailsResPage()));
+                        }),
                   ],
                 ),
               ),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@// TEXT FORM FILED (SEACRH)
-              //@@@@@@@@//@@@@@@@@@//
-
-              ExpansionTile(
-                  title: const Text("search options",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  children: [
-                    KH_ShadowCard(
-                        outsideMarginvertical: 20,
-                        child: Column(
-                          children: [
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-
-                            KH_TextField(
-                              borderWidth: 0,
-                              virticalHeight: 15,
-                              borderRadius: 20,
-                              borderColor: Colors.grey[100],
-                              fillColor: Colors.grey[200],
-                              isFilled: true,
-                              leadingInnerPrefixIconOrWidget:
-                                  const Icon(Icons.search_rounded),
-                              placeHolder: "Search",
-                              trailingInnerPrefixIconOrWidget:
-                                  const Icon(Icons.close_rounded),
-                            ),
-
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-
-                            ClipRRect(
-                                borderRadius: BorderRadius.circular(200),
-                                child: Image.asset(
-                                  ImageAsset.matam,
-                                  width: 80,
-                                  height: 80,
-                                )),
-
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-
-                            const Text("data"),
-
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-                            //@@@@@@@@@@@@@@@@@@@
-
-                            Container(
-                              margin: const EdgeInsets.all(20),
-                              height: 60,
-                              decoration: BoxDecoration(
-                                  color: Colors.pink[50],
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: KH_Bordered_Bottun(
-                                onPressed: () {},
-                                title: "Serach",
-                                width: double.infinity,
-                                textColor: Colors.pink,
-                                borderColor: Colors.pink[50],
-                              ),
-                            )
-                          ],
-                        )),
-                  ]),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//  CardForDetilseResturant
-              //@@@@@@@@//@@@@@@@@@//
-
-              CardForDetilseResturant(
-                  nameresturantorecommers: "ssss",
-                  contentRestOrEcomm: "avon",
-                  image: ImageAsset.eat,
-                  price: "3100 \$",
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (contxet) => const ProductDetailsResPage()));
-                  }),
-            ],
-          ),
-        ),
-      ),
+            ),
     );
   }
 }
-
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@    DelivryAndStarAndOpen   @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@            OrClose         @@@@@@@@@@@@@@@@@@@@@@@@//
