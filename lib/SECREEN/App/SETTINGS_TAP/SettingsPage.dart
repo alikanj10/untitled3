@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
+import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
+import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
+import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
 import 'package:untitled3/SECREEN/AUTH/LoginPage.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/TapBarController.dart';
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsAboutTheAppPage.dart';
 
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsCountactUsPage.dart';
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsLocationPage.dart';
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsOpenYourStorePage.dart';
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsProfilePage.dart';
+import 'package:untitled3/generated/l10n.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -143,6 +149,240 @@ class Settings extends StatelessWidget {
       ),
     );
   }
+
+// //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+// //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+// //@@@@@@@@@@@@@@@@@@@@@@         LANGUAGES          @@@@@@@@@@@@@@@@@@@@@@@@//
+// //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+// //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
+//   void showLanguagesBottomSheat({required BuildContext context}) {
+//     final _ss = S.of(context);
+//     final _them = Theme.of(context);
+//     final _isNormalIcons = KH_AppSettings.getIsUsingNormalIconsStatus;
+//     final _languageProvider =
+//         Provider.of<LanguageProvider>(context, listen: false);
+
+//     KH_BottomSheet.show_KH_BottomSheet(
+//       context: context,
+//       //@@@@@@@@@@//@@@@@@@@@@//
+//       child: WhiteBottomSheetCard(
+//         bgColor: Theme.of(context).cardColor,
+//         topCornerRadius: 41,
+//         child: Padding(
+//           padding: KH_Helper.getResponsivePadding(context: context),
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               //@@@@@@@@@@//
+//               Padding(
+//                 padding: const EdgeInsets.all(16.0),
+//                 child: TopLineOfBottomSheet(),
+//               ),
+//               //@@@@@@@@@@//
+//               SizedBox(
+//                 height: 6,
+//               ),
+//               //@@@@@@@@@@//
+//               Padding(
+//                 padding: const EdgeInsets.all(2.0),
+//                 child: Text(
+//                   _ss.LanguageListTitle,
+//                   style: _them.textTheme.titleSmall?.copyWith(
+//                     fontSize: 18,
+//                   ),
+//                   textAlign: TextAlign.center,
+//                 ),
+//               ),
+//               //@@@@@@@@@@//
+//               SizedBox(
+//                 height: 1,
+//               ),
+//               //@@@@@@@@@@//
+//               Material(
+//                 child: FadeIn(
+//                   child: Container(
+//                     padding: const EdgeInsets.all(16),
+//                     color: Colors.transparent,
+//                     // height: 200,
+//                     width: double.infinity,
+//                     child: Theme(
+//                       data: ThemeData(
+//                         splashColor: _them.primaryColor.withOpacity(0.2),
+//                         highlightColor: Colors.transparent,
+//                       ),
+//                       child: Column(
+//                         mainAxisAlignment: MainAxisAlignment.center,
+//                         crossAxisAlignment: CrossAxisAlignment.center,
+//                         children: [
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           ListTile(
+//                             title: Text(
+//                               "اللغة العربية",
+//                               style: _them.textTheme.bodyMedium?.copyWith(
+//                                 color: _them.hintColor,
+//                               ),
+//                             ),
+//                             leading: _isNormalIcons // K_IS_USING_NORMAL_ICONES
+//                                 ?
+//                                 // Icon(
+//                                 //     Icons.translate,
+//                                 //     color: _them.primaryColor,
+//                                 //   )
+//                                 SizedBox(
+//                                     height: 30,
+//                                     width: 30,
+//                                     child: Image(
+//                                       image: AssetImage(
+//                                           "assets/icons/notColored/translate_ar.png"),
+//                                       height: 30,
+//                                       width: 30,
+//                                       color: _them.primaryColor,
+//                                     ),
+//                                   )
+//                                 : Image(
+//                                     image: AssetImage(
+//                                         "assets/icons/colored/icons8-united-arab-emirates-100.png"),
+//                                     height: 30,
+//                                     width: 30,
+//                                   ),
+//                             onTap: () {
+//                               _languageProvider.setSellectedLocale(
+//                                   newLocaleCode: "ar");
+//                               //@@@@@//
+//                               final themesProvider =
+//                                   Provider.of<ThemesProvider>(
+//                                 context,
+//                                 listen: false,
+//                               );
+//                               themesProvider.reSetFonts();
+//                               //@@@@@//
+//                               Navigator.of(context).pop();
+//                             },
+//                           ),
+//                           Divider(),
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           ListTile(
+//                             title: Text(
+//                               "TÜRKÇE",
+//                               style: _them.textTheme.bodyMedium?.copyWith(
+//                                 color: _them.hintColor,
+//                               ),
+//                             ),
+//                             leading: _isNormalIcons // K_IS_USING_NORMAL_ICONES
+//                                 ?
+//                                 // Icon(
+//                                 //     Icons.translate,
+//                                 //     color: _them.primaryColor,
+//                                 //   )
+//                                 SizedBox(
+//                                     height: 30,
+//                                     width: 30,
+//                                     child: Image(
+//                                       image: AssetImage(
+//                                         "assets/icons/notColored/translate_ar.png",
+//                                       ),
+//                                       height: 30,
+//                                       width: 30,
+//                                       color: _them.primaryColor,
+//                                     ),
+//                                   )
+//                                 : Image(
+//                                     image: AssetImage(
+//                                       "assets/icons/colored/icons8-turkey-96.png",
+//                                     ),
+//                                     height: 30,
+//                                     width: 30,
+//                                   ),
+//                             onTap: () {
+//                               _languageProvider.setSellectedLocale(
+//                                 newLocaleCode: "tr",
+//                               );
+//                               //@@@@@//
+//                               final themesProvider =
+//                                   Provider.of<ThemesProvider>(
+//                                 context,
+//                                 listen: false,
+//                               );
+//                               themesProvider.reSetFonts();
+//                               //@@@@@//
+//                               Navigator.of(context).pop();
+//                             },
+//                           ),
+//                           Divider(),
+
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           ListTile(
+//                             title: Text(
+//                               "ENGLISH",
+//                               style: _them.textTheme.bodyMedium?.copyWith(
+//                                 color: _them.hintColor,
+//                               ),
+//                             ),
+//                             leading: _isNormalIcons // K_IS_USING_NORMAL_ICONES
+//                                 ?
+//                                 // Icon(
+//                                 //     Icons.translate_outlined,
+//                                 //     // CupertinoIcons.book,
+//                                 //     color: _them.primaryColor,
+//                                 //   )
+//                                 SizedBox(
+//                                     height: 30,
+//                                     width: 30,
+//                                     child: Image(
+//                                       image: AssetImage(
+//                                           "assets/icons/notColored/translate.png"),
+//                                       height: 30,
+//                                       width: 30,
+//                                       color: _them.primaryColor,
+//                                     ),
+//                                   )
+//                                 : Image(
+//                                     image: AssetImage(
+//                                         "assets/icons/colored/icons8-usa-100.png"),
+//                                     height: 33,
+//                                     width: 33,
+//                                   ),
+//                             onTap: () {
+//                               _languageProvider.setSellectedLocale(
+//                                   newLocaleCode: "en");
+//                               //@@@@@//
+//                               final themesProvider =
+//                                   Provider.of<ThemesProvider>(
+//                                 context,
+//                                 listen: false,
+//                               );
+//                               themesProvider.reSetFonts();
+//                               //@@@@@//
+//                               Navigator.of(context).pop();
+//                             },
+//                           ),
+//                           Divider(),
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                           //@@@@@@@@@@//@@@@@@@@@@//
+//                         ],
+//                       ),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//               //@@@@@@@@@@//
+//               SizedBox(
+//                 height: 55,
+//               ),
+//               //@@@@@@@@@@//
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -161,6 +401,8 @@ class BottomSheetLang extends StatefulWidget {
 class _StateBottomSheetLang extends State<BottomSheetLang> {
   @override
   Widget build(BuildContext context) {
+    final _languageProvider =
+        Provider.of<LanguageProvider>(context, listen: false);
     return Column(
       children: [
         MaterialButton(
@@ -171,9 +413,21 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@//
                 child: SectionsLangSettings(
-                  changetoArabic: () {},
-                  changetoEnglish: () {},
-                  changetoturka: () {},
+                  changetoArabic: () {
+                    _languageProvider.setSellectedLocale(newLocaleCode: "ar");
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TabBarController()));
+                  },
+                  changetoEnglish: () {
+                    _languageProvider.setSellectedLocale(newLocaleCode: "en");
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TabBarController()));
+                  },
+                  changetoturka: () {
+                    _languageProvider.setSellectedLocale(newLocaleCode: "tr");
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TabBarController()));
+                  },
                 ));
           },
           child: Row(children: [

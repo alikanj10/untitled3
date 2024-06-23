@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/HomePage.dart';
 import 'package:untitled3/SECREEN/App/ORADER_TAP/OederPage.dart';
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsPage.dart';
+import 'package:untitled3/SECRREN_NEW/App_NEW/HOME_TAP_NEW/HomeNew.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -14,6 +14,8 @@ import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsPage.dart';
 
 class TabBarController extends StatefulWidget {
   static const routName = "/TabBarController";
+
+  const TabBarController({super.key});
   @override
   _TabBarControllerState createState() => _TabBarControllerState();
 }
@@ -29,7 +31,7 @@ class _TabBarControllerState extends State<TabBarController> {
   // ];
   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
   final List<Widget> _pages = [
-    const HomePage(),
+    const HomeNew(),
     const Order(),
     const Settings(),
   ];

@@ -63,6 +63,7 @@ class _StateHomePage extends State<HomePage> {
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@// APPBARHOME
                     //@@@@@@@@//@@@@@@@@@//
+
                     AppBarHome(
                       onPressdbell: () {},
                       onPressdlocation: () {},
@@ -418,7 +419,7 @@ class _HomePageAdvetismentsSliderCourserState
   //@@@@@@@@@@@@@@@@@@@@@//
   @override
   Widget build(BuildContext context) {
-    final _theme = Theme.of(context);
+    // final _theme = Theme.of(context);
     // final _KH_Colors = _theme.extension<KH_Colors>()!;
     //@@@@@@@@@@@@@@@@@@@@@//
     //@@@@@@@@@@@@@@@@@@@@@//

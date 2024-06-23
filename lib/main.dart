@@ -1,11 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
 import 'package:untitled3/SECREEN/App/HOME_TAP/TapBarController.dart';
+import 'package:untitled3/generated/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +50,7 @@ class _StateMyApp extends State<MyApp> {
 
           final languagesProvider = Provider.of<LanguageProvider>(context);
           KH_Helper.safePrint(
-              " عند بدء التطبيق اللغة المختارة هي : ${languagesProvider.getSellectedProvidedlocale.toString()} ");
+              " عند بدء التطبيق اللغة المختارة هي : ${languagesProvider.getSellectedProvidedlocale.toString()}");
 
           //@@@@@@@@@@@//@@@@@@@@@@@//
           //@@@@@@@@@@@//@@@@@@@@@@@//
@@ -57,7 +59,15 @@ class _StateMyApp extends State<MyApp> {
               title: "KÖY SELLER",
               debugShowCheckedModeBanner: false,
               scrollBehavior: MyCustomScrollBehavior(),
-
+              localizationsDelegates: const [
+                // 1
+                S.delegate,
+                // 2
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
               // LOCALAIZATION
               // localizationsDelegates: [
               //   // 1

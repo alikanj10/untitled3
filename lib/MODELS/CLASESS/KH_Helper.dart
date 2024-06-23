@@ -5,7 +5,7 @@ import 'dart:ui' as ui;
 import 'package:provider/provider.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Responsivness.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/MODELS/SERVISES/SERVICES/Constants.dart';
+import 'package:untitled3/MODELS/SERVISES/Constants.dart';
 
 // ignore: camel_case_types
 class KH_Helper {

@@ -14,6 +14,8 @@ class ImageAsset {
   static const String ecommerce = "$asssetimage/ecommerce.jpg";
   static const String dozo = "$asssetimage/1716639907251.png";
   static const String kolmall = "$asssetimage/1717847406835.png";
+  static const String logorest = "$asssetimage/logorest.png";
+  static const String imageeat = "$asssetimage/imageseat.jpg";
 
   //@@@@@@@@//@@@@@@@@@//
   //@@@@@@@@//@@@@@@@@@//iconsimages

@@ -4,7 +4,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:http/http.dart' as HTTP;
 import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
-import 'package:untitled3/MODELS/SERVISES/SERVICES/Constants.dart';
+import 'package:untitled3/MODELS/SERVISES/Constants.dart';
 
 enum RequestsTypeEnum {
   Get,
