@@ -79,7 +79,11 @@ class _HomeNewState extends State<HomeNew> {
                 //@@@@@@@@//@@@@@@@@@// KH_App_Title
                 //@@@@@@@@//@@@@@@@@@//
 
-                KH_App_Title(text: _ss.ToplistHeader, fontSize: 18),
+                KH_App_Title(
+                  text: _ss.ToplistHeader,
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal,
+                ),
 
                 //@@@@@@@@//@@@@@@@@@//
                 //@@@@@@@@//@@@@@@@@@// AdvetismentSliderNew
@@ -94,6 +98,7 @@ class _HomeNewState extends State<HomeNew> {
                 KH_App_Title(
                   text: "Latest we received header",
                   fontSize: 18,
+                  fontWeight: FontWeight.normal,
                 ),
 
                 //@@@@@@@@//@@@@@@@@@//
