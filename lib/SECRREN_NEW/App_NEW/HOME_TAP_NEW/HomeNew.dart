@@ -28,6 +28,19 @@ class HomeNew extends StatefulWidget {
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
 class _HomeNewState extends State<HomeNew> {
+  bool isloading = true;
+
+  @override
+  void initState() {
+    isloading = false;
+    Future.delayed(const Duration(seconds: 3), () {
+      setState(() {
+        isloading = true;
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final _languageProvider =
@@ -37,78 +50,84 @@ class _HomeNewState extends State<HomeNew> {
     final _KH_Colors = _theme.extension<KH_Colors>()!;
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
-      body: SafeArea(
-          minimum: const EdgeInsets.all(10),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// AppBarHomeNew
-                //@@@@@@@@//@@@@@@@@@//
+      body: isloading == false
+          ? const Center(
+              child: CircularProgressIndicator(
+                color: Colors.pink,
+              ),
+            )
+          : SafeArea(
+              minimum: const EdgeInsets.all(10),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// AppBarHomeNew
+                    //@@@@@@@@//@@@@@@@@@//
 
-                AppBarHomeNew(
-                  onPressdbell: () {},
-                  onPressdlocation: () {},
-                  onPressdref: () {},
+                    AppBarHomeNew(
+                      onPressdbell: () {},
+                      onPressdlocation: () {},
+                      onPressdref: () {},
+                    ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// HomeNewAdvetismentsSliderCourser
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    HomeNewAdvetismentsSliderCourser(),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// KH_App_Title
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    KH_App_Title(
+                      text: _ss.HungryWannaShope,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                      virticalPadding: 8,
+                    ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// EcommrceAndResHomeNew
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    const EcommrceAndResHomeNew(),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// KH_App_Title
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    KH_App_Title(
+                      text: _ss.ToplistHeader,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                    ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// AdvetismentSliderNew
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    const AdvetismentSliderNew(),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// KH_App_Title
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    KH_App_Title(
+                      text: "Latest we received header",
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                    ),
+
+                    //@@@@@@@@//@@@@@@@@@//
+                    //@@@@@@@@//@@@@@@@@@// AdvetismentSliderNew2
+                    //@@@@@@@@//@@@@@@@@@//
+
+                    AdvetismentSliderNew2()
+                  ],
                 ),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// HomeNewAdvetismentsSliderCourser
-                //@@@@@@@@//@@@@@@@@@//
-
-                HomeNewAdvetismentsSliderCourser(),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// KH_App_Title
-                //@@@@@@@@//@@@@@@@@@//
-
-                KH_App_Title(
-                  text: _ss.HungryWannaShope,
-                  fontSize: 18,
-                  fontWeight: FontWeight.normal,
-                  virticalPadding: 8,
-                ),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// EcommrceAndResHomeNew
-                //@@@@@@@@//@@@@@@@@@//
-
-                const EcommrceAndResHomeNew(),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// KH_App_Title
-                //@@@@@@@@//@@@@@@@@@//
-
-                KH_App_Title(
-                  text: _ss.ToplistHeader,
-                  fontSize: 18,
-                  fontWeight: FontWeight.normal,
-                ),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// AdvetismentSliderNew
-                //@@@@@@@@//@@@@@@@@@//
-
-                const AdvetismentSliderNew(),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// KH_App_Title
-                //@@@@@@@@//@@@@@@@@@//
-
-                KH_App_Title(
-                  text: "Latest we received header",
-                  fontSize: 18,
-                  fontWeight: FontWeight.normal,
-                ),
-
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@// AdvetismentSliderNew2
-                //@@@@@@@@//@@@@@@@@@//
-
-                AdvetismentSliderNew2()
-              ],
-            ),
-          )),
+              )),
     );
   }
 }
@@ -369,23 +388,23 @@ class _StateEcommrceAndResHomeNew extends State<EcommrceAndResHomeNew> {
           Expanded(
             child: InkWell(
               onTap: () {},
-              child: isloading == false
-                  ? const Center(
-                      child: CircularProgressIndicator(
-                        color: Colors.pink,
-                      ),
-                    )
-                  : KH_ShadowCard(
-                      height: 130,
-                      outsideMargin: 0,
-                      child: ClipRRect(
+              child: KH_ShadowCard(
+                height: 130,
+                outsideMargin: 0,
+                child: isloading == false
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.pink,
+                        ),
+                      )
+                    : ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
                           fit: BoxFit.cover,
                           ImageAsset.ecommerce,
                         ),
                       ),
-                    ),
+              ),
             ),
           ),
 
@@ -394,23 +413,23 @@ class _StateEcommrceAndResHomeNew extends State<EcommrceAndResHomeNew> {
           Expanded(
             child: InkWell(
               onTap: () {},
-              child: isloading == false
-                  ? const Center(
-                      child: CircularProgressIndicator(
-                        color: Colors.pink,
-                      ),
-                    )
-                  : KH_ShadowCard(
-                      height: 130,
-                      outsideMargin: 0,
-                      child: ClipRRect(
+              child: KH_ShadowCard(
+                height: 130,
+                outsideMargin: 0,
+                child: isloading == false
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.pink,
+                        ),
+                      )
+                    : ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
                           ImageAsset.matam,
                           fit: BoxFit.cover,
                         ),
                       ),
-                    ),
+              ),
             ),
           )
         ],

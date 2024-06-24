@@ -153,10 +153,11 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
-                                    child: Image.asset(
-                                  ImageAsset.checkbox,
-                                  height: 25,
-                                )),
+                                  child: Image.asset(
+                                    ImageAsset.checkbox,
+                                    height: 25,
+                                  ),
+                                ),
                                 const SizedBox(
                                   width: 2,
                                 ),
