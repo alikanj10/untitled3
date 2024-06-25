@@ -415,20 +415,25 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
                 child: SectionsLangSettings(
                   changetoArabic: () {
                     _languageProvider.setSellectedLocale(newLocaleCode: "ar");
+                    // Navigator.pop(context);
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => TabBarController()));
                   },
                   changetoEnglish: () {
                     _languageProvider.setSellectedLocale(newLocaleCode: "en");
+                    // Navigator.pop(context);
+
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => TabBarController()));
                   },
                   changetoturka: () {
                     _languageProvider.setSellectedLocale(newLocaleCode: "tr");
+                    // Navigator.pop(context);
+
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => TabBarController()));
                   },
-                ));
+                ),);
           },
           child: Row(children: [
             //@@@@@@@@//@@@@@@@@@//

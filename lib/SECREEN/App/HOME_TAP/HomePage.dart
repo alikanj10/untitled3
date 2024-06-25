@@ -7,6 +7,7 @@ import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Responsivness.dart';
 import 'package:untitled3/SECREEN/App/HOME_TAP/RestaurantPage.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/generated/l10n.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -46,6 +47,8 @@ class _StateHomePage extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _ss = S.of(context);
+
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
       body: isloading == false
@@ -64,24 +67,24 @@ class _StateHomePage extends State<HomePage> {
                     //@@@@@@@@//@@@@@@@@@// APPBARHOME
                     //@@@@@@@@//@@@@@@@@@//
 
-                    AppBarHome(
-                      onPressdbell: () {},
-                      onPressdlocation: () {},
-                      onPressdref: () {},
-                    ),
+                    // AppBarHome(
+                    //   onPressdbell: () {},
+                    //   onPressdlocation: () {},
+                    //   onPressdref: () {},
+                    // ),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@// HomePageAdvetismentsSliderCourser
                     //@@@@@@@@//@@@@@@@@@//
 
-                    HomePageAdvetismentsSliderCourser(),
+                    // HomePageAdvetismentsSliderCourser(),
 
                     //=======================================================================
-                    KH_App_Title(
-                      text: "hungry ? wanna shop ?",
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                    ),
+                    // KH_App_Title(
+                    //   text: _ss.HungryWannaShope,
+                    //   fontSize: 18,
+                    //   fontWeight: FontWeight.normal,
+                    // ),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@// EcommrceAndResHome

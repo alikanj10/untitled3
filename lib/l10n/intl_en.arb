@@ -1,14 +1,8 @@
 {
-    "@@locale": "en" ,
-
-"=============== Homepage ================" : "=============== Homepage ================",
-
-
-"ChooseRegoin": "Choose Regoin",
-"HungryWannaShope": "Hungry ? WannaShope ?",
-"ToplistHeader": "Toplist Header",
-
-"LastestWeReceivedHeader" : "Lastest We Received Header" 
-
-
+    "@@locale": "en",
+    "=============== Homepage ================": "=============== Homepage ================",
+    "ChooseRegoin": "Choose Regoin",
+    "HungryWannaShope": "Hungry ? WannaShope ?",
+    "ToplistHeader": "Toplist Header",
+    "LastestWeReceivedHeader": "Lastest We Received Header"
 }
