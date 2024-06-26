@@ -14,8 +14,9 @@
 	<string>6.0</string>
 	<key>CFBundleLocalizations</key>
 	<array>
-		<string>ar</string>
 		<string>en</string>
+		<string>ar</string>
+		<string>tr</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>KOY STORE</string>
