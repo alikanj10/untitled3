@@ -51,8 +51,7 @@ class ImageAsset {
   static const String delivery = "$iconsimages/icons8-delivery-100.png";
   static const String checkbox = "$iconsimages/icons8-checkbox-100.png";
   static const String money = "$iconsimages/icons8-money-100.png";
-  static const String recycleBin =
-      "$iconsimages/icons8-recycle-bin-100.png.png";
+  static const String recycleBin = "$iconsimages/icons8-recycle-bin-100.png";
   static const String note = "$iconsimages/icons8-note-48.png";
   static const String basketShoppimg = "$iconsimages/icons8-basket-100.png";
   static const String card = "$iconsimages/icons8-card-48.png";

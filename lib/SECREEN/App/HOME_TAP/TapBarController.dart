@@ -4,7 +4,7 @@ import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
 import 'package:untitled3/SECREEN/App/ORADER_TAP/OederPage.dart';
 import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsPage.dart';
-import 'package:untitled3/SECRREN_NEW/App_NEW/HOME_TAP_NEW/HomeNew.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/Home_New_Page.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//

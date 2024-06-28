@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/CartPage.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/PrudactDetilesRestaurantPage.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/Cart_New_Page.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/PrudactDetilesRestaurant_New_Page.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -44,7 +44,7 @@ class _StatePageProductInfoPageForRestaurant
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
       body: isloading == false
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(
                 color: Colors.pink,
               ),
@@ -56,7 +56,6 @@ class _StatePageProductInfoPageForRestaurant
                     KH_ShadowCard(
                       innerPadding: 10,
                       innerPaddingvertical: 8,
-                      bgColor: Colors.white,
                       outsideMarginvertical: 10,
                       child: Column(
                         children: [
@@ -72,7 +71,7 @@ class _StatePageProductInfoPageForRestaurant
                                 KH_ShadowCard(
                                   outsideMarginvertical: 8,
                                   outsideMargin: 8,
-                                  bgColor: Colors.grey.withOpacity(0.8),
+                                  bgColor: Colors.grey.withOpacity(0.6),
                                   child: IconButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
@@ -100,8 +99,10 @@ class _StatePageProductInfoPageForRestaurant
                           ),
                           KH_App_Title(
                             virticalPadding: 0,
-                            fontSize: 16,
-                            text: "Shawemaa . accessoies",
+                            fontSize: 15,
+                            text:
+                                "Shawemaa .  accessoies .  grilled chiken .  fish",
+                            titleColor: Colors.grey,
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 15),
@@ -116,11 +117,11 @@ class _StatePageProductInfoPageForRestaurant
                                 Expanded(
                                     child: KH_ShadowCard(
                                         bgColor: Colors.orange[100],
-                                        outsideMargin: 10,
+                                        outsideMargin: 3,
                                         borderRadius: 5,
                                         child: DelivryAndStarAndOpenOrClose(
-                                          colors: Colors.brown,
-                                          text: "5",
+                                          colors: Colors.orange,
+                                          text: "4.9",
                                           icons: ImageAsset.star,
                                           onTap: () {},
                                         ))),
@@ -129,12 +130,10 @@ class _StatePageProductInfoPageForRestaurant
                                 //@@@@@@@@//@@@@@@@@@//
                                 //@@@@@@@@//@@@@@@@@@//
 
-                                Container(
-                                    width: 2, height: 30, color: Colors.grey),
                                 Expanded(
                                   child: KH_ShadowCard(
                                     bgColor: Colors.blue[100],
-                                    outsideMargin: 10,
+                                    outsideMargin: 3,
                                     borderRadius: 5,
                                     child: DelivryAndStarAndOpenOrClose(
                                         colors: Colors.blue,
@@ -148,13 +147,11 @@ class _StatePageProductInfoPageForRestaurant
                                 //@@@@@@@@//@@@@@@@@@//
                                 //@@@@@@@@//@@@@@@@@@//
 
-                                Container(
-                                    width: 2, height: 30, color: Colors.grey),
                                 Expanded(
                                   child: KH_ShadowCard(
                                     outsideMarginvertical: 10,
                                     bgColor: Colors.green[100],
-                                    outsideMargin: 10,
+                                    outsideMargin: 3,
                                     borderRadius: 5,
                                     child: DelivryAndStarAndOpenOrClose(
                                         colors: Colors.green,
@@ -171,57 +168,94 @@ class _StatePageProductInfoPageForRestaurant
 
                           const Divider(height: 10, color: Colors.grey),
                           Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Expanded(
-                                  child: KH_ShadowCard(
-                                    bgColor: Colors.green[100],
-                                    outsideMargin: 10,
-                                    borderRadius: 10,
-                                    child: CartAndInfoAndFavorite(
-                                        onTap: () {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                  builder: (contxet) =>
-                                                      const Cart()));
-                                        },
-                                        text: "السلة ",
-                                        icons: ImageAsset.cart),
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                child: KH_ShadowCard(
+                                  height: 72,
+                                  bgColor: Colors.green[100],
+                                  outsideMargin: 5,
+                                  borderRadius: 10,
+                                  child: CartAndInfoAndFavorite(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (contxet) =>
+                                                    const Cart()));
+                                      },
+                                      text: "السلة ",
+                                      icons: ImageAsset.cart),
+                                ),
+                              ),
+
+                              //@@@@@@@@//@@@@@@@@@//
+                              //@@@@@@@@//@@@@@@@@@//
+                              //@@@@@@@@//@@@@@@@@@//
+
+                              Container(
+                                width: 2,
+                                height: 65,
+                                color: Colors.grey[300],
+                              ),
+                              Expanded(
+                                child: KH_ShadowCard(
+                                  height: 72,
+                                  bgColor: Colors.orange[100],
+                                  outsideMargin: 5,
+                                  borderRadius: 10,
+                                  child: CartAndInfoAndFavorite(
+                                    onTap: () {},
+                                    text: "معلومات ",
+                                    icons: ImageAsset.info,
                                   ),
                                 ),
+                              ),
 
-                                //@@@@@@@@//@@@@@@@@@//
-                                //@@@@@@@@//@@@@@@@@@//
-                                //@@@@@@@@//@@@@@@@@@//
+                              //@@@@@@@@//@@@@@@@@@//
+                              //@@@@@@@@//@@@@@@@@@//  Favorite
+                              //@@@@@@@@//@@@@@@@@@//
 
-                                Container(
-                                    width: 2, height: 80, color: Colors.grey),
-                                Expanded(
-                                  child: KH_ShadowCard(
-                                    bgColor: Colors.orange[100],
-                                    outsideMargin: 10,
-                                    borderRadius: 10,
-                                    child: CartAndInfoAndFavorite(
-                                      onTap: () {},
-                                      text: "معلومات ",
-                                      icons: ImageAsset.info,
-                                    ),
-                                  ),
+                              Container(
+                                width: 2,
+                                height: 65,
+                                color: Colors.grey[300],
+                              ),
+                              Expanded(
+                                child: Favorite(
+                                  text: "المفصلة",
+                                  addOrDeleteFavorite: () {},
                                 ),
+                              ),
+                            ],
+                          ),
 
-                                //@@@@@@@@//@@@@@@@@@//
-                                //@@@@@@@@//@@@@@@@@@//  Favorite
-                                //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
 
-                                Container(
-                                    width: 2, height: 80, color: Colors.grey),
-                                Expanded(
-                                  child: Favorite(
-                                    text: "المفصلة",
-                                    addOrDeleteFavorite: () {},
-                                  ),
-                                )
-                              ]),
+                          KH_Filled_Bottun(
+                            margin: const EdgeInsets.all(5),
+                            onPressed: () {},
+                            title: "Free delivery for orders above 220 ",
+                            width: double.infinity,
+                            bgColor: const Color(0xffd9f1f1),
+                            textColor: const Color(0xff08a598),
+                            borderColor: Colors.pink[100],
+                          ),
+
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+                          //@@@@@@@@//@@@@@@@@@//
+
+                          KH_Filled_Bottun(
+                            margin: const EdgeInsets.all(5),
+                            onPressed: () {},
+                            title: "Minimum oede amoint is 110",
+                            width: double.infinity,
+                            bgColor: const Color(0xfffce9da),
+                            textColor: const Color(0xfffeb6d05),
+                            borderColor: Colors.pink[100],
+                          ),
                         ],
                       ),
                     ),
@@ -231,87 +265,89 @@ class _StatePageProductInfoPageForRestaurant
                     //@@@@@@@@//@@@@@@@@@//
 
                     ExpansionTile(
-                        title: const Text("search options",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
-                        children: [
-                          KH_ShadowCard(
-                              outsideMarginvertical: 20,
-                              child: Column(
-                                children: [
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
+                      title: const Text("search options",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      children: [
+                        KH_ShadowCard(
+                          child: Column(
+                            children: [
+                              //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
 
-                                  KH_TextField(
-                                    borderWidth: 0,
-                                    virticalHeight: 15,
-                                    borderRadius: 20,
-                                    borderColor: Colors.grey[100],
-                                    fillColor: Colors.grey[200],
-                                    isFilled: true,
-                                    leadingInnerPrefixIconOrWidget:
-                                        const Icon(Icons.search_rounded),
-                                    placeHolder: "Search",
-                                    trailingInnerPrefixIconOrWidget:
-                                        const Icon(Icons.close_rounded),
+                              KH_FormTextField(
+                                borderWidth: 0,
+                                borderColor: Colors.grey[50],
+                                virticalHeight: 0,
+                                borderRadius: 10,
+                                isFilled: true,
+                                padding: const EdgeInsets.all(10),
+                                placeHolder: "search",
+                                leadingInnerPrefixIconOrWidget:
+                                    const Icon(Icons.search),
+                                trailingInnerPrefixIconOrWidget: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.add_circle_outline_outlined,
+                                    size: 20,
                                   ),
+                                ),
+                              ),
 
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
 
-                                  ClipRRect(
-                                      borderRadius: BorderRadius.circular(200),
-                                      child: Image.asset(
-                                        ImageAsset.matam,
-                                        width: 80,
-                                        height: 80,
-                                      )),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(200),
+                                child: Image.asset(
+                                  ImageAsset.matam,
+                                  width: 80,
+                                  height: 80,
+                                ),
+                              ),
 
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
+                              const Text("data"),
 
-                                  const Text("data"),
+                              //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
+                              //@@@@@@@@@@@@@@@@@@@
 
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
-                                  //@@@@@@@@@@@@@@@@@@@
-
-                                  Container(
-                                    margin: const EdgeInsets.all(20),
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                        color: Colors.pink[50],
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: KH_Bordered_Bottun(
-                                      onPressed: () {},
-                                      title: "Serach",
-                                      width: double.infinity,
-                                      textColor: Colors.pink,
-                                      borderColor: Colors.pink[50],
-                                    ),
-                                  )
-                                ],
-                              )),
-                        ]),
-
+                              KH_Filled_Bottun(
+                                onPressed: () {},
+                                title: "Serach",
+                                width: double.infinity,
+                                bgColor: Colors.pink[50],
+                                textColor: Colors.pink,
+                                borderColor: Colors.pink[100],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//  CardForDetilseResturant
                     //@@@@@@@@//@@@@@@@@@//
 
                     CardForDetilseResturant(
-                        nameresturantorecommers: "ssss",
-                        contentRestOrEcomm: "avon",
-                        image: ImageAsset.eat,
-                        price: "3100 \$",
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (contxet) =>
-                                  const ProductDetailsResPage()));
-                        }),
+                      nameresturantorecommers: "ssss",
+                      contentRestOrEcomm: "avon",
+                      image: ImageAsset.eat,
+                      price: "3100 \$",
+                      onTapAddToCart: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (contxet) => const ProductDetailsResPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -346,7 +382,7 @@ class DelivryAndStarAndOpenOrClose extends StatelessWidget {
         height: 35,
         width: 100,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
@@ -356,14 +392,20 @@ class DelivryAndStarAndOpenOrClose extends StatelessWidget {
               icons,
               height: 30,
             ),
-
+            SizedBox(
+              width: 5,
+            ),
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
 
             Text(
               text,
-              style: TextStyle(fontSize: 16, color: colors),
+              style: TextStyle(
+                fontSize: 17,
+                color: colors,
+                fontWeight: FontWeight.bold,
+              ),
             )
           ],
         ),
@@ -428,15 +470,18 @@ class CartAndInfoAndFavorite extends StatelessWidget {
 class Favorite extends StatelessWidget {
   final String text;
   final void Function()? addOrDeleteFavorite;
-  const Favorite(
-      {super.key, required this.text, required this.addOrDeleteFavorite});
+  const Favorite({
+    super.key,
+    required this.text,
+    required this.addOrDeleteFavorite,
+  });
 
   @override
   Widget build(BuildContext context) {
     return KH_ShadowCard(
       bgColor: Colors.grey[300],
       borderRadius: 10,
-      outsideMargin: 10,
+      outsideMargin: 5,
       outsideMarginvertical: 10,
       child: Column(children: [
         //@@@@@@@@//@@@@@@@@@//
@@ -445,7 +490,11 @@ class Favorite extends StatelessWidget {
 
         IconButton(
             onPressed: addOrDeleteFavorite,
-            icon: const Icon(Icons.favorite_border, size: 35)),
+            icon: const Icon(
+              Icons.favorite_border_outlined,
+              size: 30,
+              color: Colors.grey,
+            )),
 
         //@@@@@@@@//@@@@@@@@@//
         //@@@@@@@@//@@@@@@@@@//
@@ -453,7 +502,10 @@ class Favorite extends StatelessWidget {
 
         Text(
           text,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ]),
     );
@@ -522,21 +574,27 @@ class CardForDetilseResturant extends StatelessWidget {
                   children: [
                     Text(
                       nameresturantorecommers,
-                      style: const TextStyle(fontSize: 18),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Text(
                       contentRestOrEcomm,
                       style: const TextStyle(fontSize: 14),
                     ),
-                    const Divider(
-                      height: 10,
-                      color: Colors.black,
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Divider(
+                      height: 6,
+                      color: Colors.grey[400],
                     ),
                     const SizedBox(
-                      height: 2,
+                      height: 8,
                     ),
 
                     //@@@@@@@@//@@@@@@@@@//

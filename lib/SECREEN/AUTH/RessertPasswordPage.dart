@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
+// import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
 import 'package:untitled3/SECREEN/AUTH/LoginPage.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
-import 'package:untitled3/generated/l10n.dart';
+// import 'package:untitled3/generated/l10n.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -27,9 +27,9 @@ class _StateResertPasword extends State<ResertPasword> {
 
   @override
   Widget build(BuildContext context) {
-    final _ss = S.of(context);
-    final _theme = Theme.of(context);
-    final _KH_Colors = _theme.extension<KH_Colors>()!;
+    // final _ss = S.of(context);
+    // final _theme = Theme.of(context);
+    // final _KH_Colors = _theme.extension<KH_Colors>()!;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

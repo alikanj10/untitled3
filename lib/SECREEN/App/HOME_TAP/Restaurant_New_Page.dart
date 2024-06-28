@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/ProdactInforamtionRestaurantsPage.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/ProdactInforamtionRestaurants_New_Page.dart';
 import 'package:untitled3/VIEW/AdvetismentsSliderCourser.dart';
 import 'package:untitled3/VIEW/CardForDetilesShopeAndRestarant.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
@@ -11,11 +11,11 @@ import 'package:untitled3/VIEW/KH_Componants.dart';
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
-class Restutant extends StatefulWidget {
-  const Restutant({super.key});
+class RestutantNew extends StatefulWidget {
+  const RestutantNew({super.key});
 
   @override
-  State<Restutant> createState() => _StateRestutant();
+  State<RestutantNew> createState() => _StateRestutantNew();
 }
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -24,7 +24,7 @@ class Restutant extends StatefulWidget {
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
-class _StateRestutant extends State<Restutant> {
+class _StateRestutantNew extends State<RestutantNew> {
   bool isloading = true;
 
   @override
@@ -43,7 +43,6 @@ class _StateRestutant extends State<Restutant> {
   List name = [
     "شاورما",
     "غربي",
-    "فروج مشوي ",
     "مشاوي",
     "صفيحة",
     "سمك",
@@ -60,13 +59,19 @@ class _StateRestutant extends State<Restutant> {
   ];
   @override
   Widget build(BuildContext context) {
+    // final _theme = Theme.of(context);
+    // final _KH_Colors = _theme.extension<KH_Colors>()!;
+
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
       appBar: AppBar(
-          centerTitle: true,
-          title: const Text("نتائج البحث ",
-              style: TextStyle(
-                  color: Colors.pinkAccent, fontWeight: FontWeight.bold))),
+        centerTitle: true,
+        title: const Text(
+          "نتائج البحث ",
+          style:
+              TextStyle(color: Colors.pinkAccent, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: isloading == false
           ? Center(
               child: CircularProgressIndicator(
@@ -80,68 +85,79 @@ class _StateRestutant extends State<Restutant> {
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@// CHOISE CHIP RESTURANT
                     //@@@@@@@@//@@@@@@@@@//
-                    Container(
-                        margin: EdgeInsets.only(top: 20),
-                        height: 50,
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: name.length,
-                            itemBuilder: (context, index) {
-                              return Wrap(spacing: 8, runSpacing: 8, children: [
-                                const SizedBox(width: 3),
-                                ChoiceChip(
-                                    showCheckmark: false,
-                                    selectedColor: Colors.pink[50],
-                                    selected: defaultchioseindex == index,
-                                    onSelected: (nowSelcted) {
-                                      setState(() {
-                                        defaultchioseindex =
-                                            nowSelcted ? index : null;
-                                      });
-                                    },
-                                    label: Text("${name[index]}",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                            color: selected == true
-                                                ? Colors.pink
-                                                : Colors.black)))
-                              ]);
-                            })),
 
-                    //=======================
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: 50,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: name.length,
+                        itemBuilder: (context, index) {
+                          return Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              const SizedBox(width: 3),
+                              ChoiceChip(
+                                padding: EdgeInsets.all(10),
+                                selectedColor: Colors.pink[50],
+                                selected: defaultchioseindex == index,
+                                onSelected: (nowSelcted) {
+                                  setState(
+                                    () {
+                                      defaultchioseindex =
+                                          nowSelcted ? index : null;
+                                    },
+                                  );
+                                },
+                                label: Text(
+                                  "${name[index]}",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      color: selected == true
+                                          ? Colors.pink
+                                          : Colors.black),
+                                ),
+                              )
+                            ],
+                          );
+                        },
+                      ),
+                    ),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@// TEXT FORM FILED (SEARCH) RESTURANT
                     //@@@@@@@@//@@@@@@@@@//
-                    KH_FormTextField(
-                        borderWidth: 0,
-                        virticalHeight: 15,
-                        borderColor: Colors.grey[100],
-                        fillColor: Colors.grey[200],
-                        isFilled: true,
-                        padding: const EdgeInsets.all(10),
-                        placeHolder: "search",
-                        leadingInnerPrefixIconOrWidget:
-                            const Icon(Icons.search),
-                        trailingInnerPrefixIconOrWidget: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.close_sharp,
-                              size: 20,
-                            ))),
 
-                    const SizedBox(height: 20),
+                    KH_FormTextField(
+                      borderWidth: 0,
+                      virticalHeight: 0,
+                      borderColor: Colors.grey[50],
+                      borderRadius: 10,
+                      isFilled: true,
+                      padding: const EdgeInsets.all(10),
+                      placeHolder: "search",
+                      leadingInnerPrefixIconOrWidget: const Icon(Icons.search),
+                      trailingInnerPrefixIconOrWidget: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.add_circle_outline_outlined,
+                          size: 20,
+                        ),
+                      ),
+                    ),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@// AdvetismentsSliderCourser
                     //@@@@@@@@//@@@@@@@@@//
+
                     const AdvetismentsSliderCourser(),
-                    const SizedBox(height: 20),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//CardForDetilseEcommersAndResturant
                     //@@@@@@@@//@@@@@@@@@//
+
                     CardForDetilseEcommersAndResturant(
                       nameresturantorecommers: "القبطان",
                       contentRestOrEcomm: "شاورما , كربسيي",
@@ -150,9 +166,12 @@ class _StateRestutant extends State<Restutant> {
                       evaluationNumber: " 4.99",
                       pricedelivry: "100",
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
                             builder: (contxet) =>
-                                PageProductInfoPageForRestaurant()));
+                                PageProductInfoPageForRestaurant(),
+                          ),
+                        );
                       },
                     )
                   ],

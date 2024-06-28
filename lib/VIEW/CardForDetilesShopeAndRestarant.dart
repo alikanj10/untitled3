@@ -34,6 +34,8 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final _theme = Theme.of(context);
+    // final _KH_Colors = _theme.extension<KH_Colors>()!;
     return InkWell(
       onTap: onTap,
       child: KH_ShadowCard(
@@ -72,26 +74,35 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                   children: [
                     Text(
                       nameresturantorecommers,
-                      style: const TextStyle(fontSize: 18),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Text(
                       contentRestOrEcomm,
-                      style: const TextStyle(fontSize: 14),
+                      style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const Divider(
-                      height: 10,
-                      color: Colors.black,
+
+                    const SizedBox(
+                      height: 6,
+                    ),
+                    Divider(
+                      height: 5,
+                      color: Colors.grey[400],
                     ),
                     const SizedBox(
-                      height: 2,
+                      height: 6,
                     ),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
+
                     Row(
                       children: [
                         Expanded(
@@ -110,7 +121,12 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                                 const SizedBox(
                                   width: 2,
                                 ),
-                                Text(evaluationNumber)
+                                Text(
+                                  evaluationNumber,
+                                  style: TextStyle(
+                                      color: Colors.orange,
+                                      fontWeight: FontWeight.bold),
+                                )
                               ],
                             ),
                           ),
@@ -120,25 +136,31 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                         //@@@@@@@@//@@@@@@@@@//
                         //@@@@@@@@//@@@@@@@@@//
                         Expanded(
-                            child: KH_SplashedCard(
-                          borderRadius: 8,
-                          bgColor: Colors.blue[100],
-                          outsideMargin: 5,
-                          height: 30,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                ImageAsset.delivery,
-                                height: 25,
-                              ),
-                              const SizedBox(
-                                width: 2,
-                              ),
-                              Text(pricedelivry)
-                            ],
+                          child: KH_SplashedCard(
+                            borderRadius: 8,
+                            bgColor: Colors.pink[50],
+                            outsideMargin: 5,
+                            height: 30,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  ImageAsset.delivery,
+                                  height: 25,
+                                ),
+                                const SizedBox(
+                                  width: 2,
+                                ),
+                                Text(
+                                  pricedelivry,
+                                  style: TextStyle(
+                                      color: Colors.pink,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
                           ),
-                        )),
+                        ),
 
                         //@@@@@@@@//@@@@@@@@@//
                         //@@@@@@@@//@@@@@@@@@//
@@ -146,7 +168,7 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                         Expanded(
                           child: KH_SplashedCard(
                             borderRadius: 8,
-                            bgColor: Colors.green[100],
+                            bgColor: Colors.green[50],
                             outsideMargin: 5,
                             height: 30,
                             child: Row(
@@ -161,7 +183,12 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                                 const SizedBox(
                                   width: 2,
                                 ),
-                                Text(openOrClosed)
+                                Text(
+                                  openOrClosed,
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold),
+                                )
                               ],
                             ),
                           ),

@@ -7,6 +7,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
+import 'package:untitled3/SECREEN/App/HOME_TAP/Restaurant_New_Page.dart';
 import 'package:untitled3/VIEW/KH_Componants.dart';
 import 'package:untitled3/generated/l10n.dart';
 
@@ -47,9 +48,20 @@ class _HomeNewState extends State<HomeNew> {
   Widget build(BuildContext context) {
     final _languageProvider =
         Provider.of<LanguageProvider>(context, listen: false);
+
+    //@@@@@@@@//@@@@@@@@@//
+
     final _ss = S.of(context);
+
+    //@@@@@@@@//@@@@@@@@@//
+
     final _theme = Theme.of(context);
+
+    //@@@@@@@@//@@@@@@@@@//
+
     final _KH_Colors = _theme.extension<KH_Colors>()!;
+    //@@@@@@@@//@@@@@@@@@//
+
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
       body: isloading == false
@@ -410,11 +422,15 @@ class _StateEcommrceAndResHomeNew extends State<EcommrceAndResHomeNew> {
             ),
           ),
 
-          //==========================================
+//@@@@@@@@@@@@@@@@@@@@
+
           const SizedBox(width: 20),
           Expanded(
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => RestutantNew()));
+              },
               child: KH_ShadowCard(
                 height: 130,
                 outsideMargin: 0,

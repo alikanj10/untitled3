@@ -469,7 +469,6 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
   void showLanguagesBottomSheat({required BuildContext context}) {
-    final _ss = S.of(context);
     final _them = Theme.of(context);
     final _isNormalIcons = false;
     final _languageProvider =
@@ -558,9 +557,8 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
                                       color: _them.primaryColor,
                                     ),
                                   )
-                                : Image(
-                                    image: AssetImage(
-                                        "assets/icons/colored/icons8-united-arab-emirates-100.png"),
+                                : Image.asset(
+                                    ImageAsset.emirates,
                                     height: 30,
                                     width: 30,
                                   ),
@@ -614,10 +612,8 @@ class _StateBottomSheetLang extends State<BottomSheetLang> {
                                       color: _them.primaryColor,
                                     ),
                                   )
-                                : Image(
-                                    image: AssetImage(
-                                      "assets/icons/colored/icons8-turkey-96.png",
-                                    ),
+                                : Image.asset(
+                                    ImageAsset.turkia,
                                     height: 30,
                                     width: 30,
                                   ),

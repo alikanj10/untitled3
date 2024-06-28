@@ -26,85 +26,87 @@ class _StateMyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          ChangeNotifierProvider(
-            create: (context) => ThemesProvider(),
+      providers: [
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        ChangeNotifierProvider(
+          create: (context) => ThemesProvider(),
+        ),
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        ChangeNotifierProvider(
+          create: (context) => LanguageProvider(),
+        ),
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+      ],
+      builder: (context, child) {
+        final themesProvider = Provider.of<ThemesProvider>(context);
+        KH_Helper.safePrint(
+            "عند بدء التطبيق الثيم المختار هو : ${themesProvider.getSellectedTheme.toString()}");
+
+        final languagesProvider = Provider.of<LanguageProvider>(context);
+        KH_Helper.safePrint(
+            " عند بدء التطبيق اللغة المختارة هي : ${languagesProvider.getSellectedProvidedlocale.toString()}");
+
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        //@@@@@@@@@@@//@@@@@@@@@@@//
+        return MaterialApp(
+          // SETTINGS
+          title: "KÖY SELLER",
+          debugShowCheckedModeBanner: false,
+          scrollBehavior: MyCustomScrollBehavior(),
+          localizationsDelegates: const [
+            // 1
+            S.delegate,
+            // 2
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          // LOCALAIZATION
+          // localizationsDelegates: [
+          //   // 1
+          //   S.delegate,
+          //   // 2
+          //   GlobalMaterialLocalizations.delegate,
+          //   GlobalWidgetsLocalizations.delegate,
+          //   GlobalCupertinoLocalizations.delegate,
+          // ],
+          // supportedLocales: S.delegate.supportedLocales,
+          // locale: languagesProvider.getSellectedProvidedlocale,
+
+          // THEMES
+          // theme: KH_THEME.lightThemeData(),
+          // darkTheme: KH_THEME.darkThemeData(),
+
+          themeMode: themesProvider.getSellectedTheme,
+          theme: KH_THEME.getSellectedTheme(
+            themeMode: themesProvider.getSellectedTheme,
+            themeObject: themesProvider.getThemeObject,
           ),
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          ChangeNotifierProvider(
-            create: (context) => LanguageProvider(),
-          ),
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          //@@@@@@@@@@@//@@@@@@@@@@@//
 
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-        ],
-        builder: (context, child) {
-          final themesProvider = Provider.of<ThemesProvider>(context);
-          KH_Helper.safePrint(
-              "عند بدء التطبيق الثيم المختار هو : ${themesProvider.getSellectedTheme.toString()}");
+          // ROUTES
+          // initialRoute: SplachScreen.routName,
+          // routes: dozoStoreAppRoutes,
 
-          final languagesProvider = Provider.of<LanguageProvider>(context);
-          KH_Helper.safePrint(
-              " عند بدء التطبيق اللغة المختارة هي : ${languagesProvider.getSellectedProvidedlocale.toString()}");
+          home: TabBarController(),
 
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          //@@@@@@@@@@@//@@@@@@@@@@@//
-          return MaterialApp(
-              // SETTINGS
-              title: "KÖY SELLER",
-              debugShowCheckedModeBanner: false,
-              scrollBehavior: MyCustomScrollBehavior(),
-              localizationsDelegates: const [
-                // 1
-                S.delegate,
-                // 2
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              // LOCALAIZATION
-              // localizationsDelegates: [
-              //   // 1
-              //   S.delegate,
-              //   // 2
-              //   GlobalMaterialLocalizations.delegate,
-              //   GlobalWidgetsLocalizations.delegate,
-              //   GlobalCupertinoLocalizations.delegate,
-              // ],
-              // supportedLocales: S.delegate.supportedLocales,
-              // locale: languagesProvider.getSellectedProvidedlocale,
-
-              // THEMES
-              // theme: KH_THEME.lightThemeData(),
-              // darkTheme: KH_THEME.darkThemeData(),
-
-              themeMode: themesProvider.getSellectedTheme,
-              theme: KH_THEME.getSellectedTheme(
-                themeMode: themesProvider.getSellectedTheme,
-                themeObject: themesProvider.getThemeObject,
-              ),
-
-              // ROUTES
-              // initialRoute: SplachScreen.routName,
-              // routes: dozoStoreAppRoutes,
-
-              home: TabBarController(),
-
-              // TEXT SCALE
-              builder: (context, child) {
-                return MediaQuery(
-                  child: child ?? Container(),
-                  data: MediaQuery.of(context)
-                      .copyWith(textScaler: TextScaler.linear(1.0)),
-                );
-              });
-        });
+          // TEXT SCALE
+          builder: (context, child) {
+            return MediaQuery(
+              child: child ?? Container(),
+              data: MediaQuery.of(context)
+                  .copyWith(textScaler: TextScaler.linear(1.0)),
+            );
+          },
+        );
+      },
+    );
   }
 }
 
