@@ -73,14 +73,15 @@ class _StatePageProductInfoPageForRestaurant
                                   outsideMargin: 8,
                                   bgColor: Colors.grey.withOpacity(0.6),
                                   child: IconButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      icon: const Icon(
-                                        Icons.arrow_back_outlined,
-                                        size: 30,
-                                        color: Colors.pink,
-                                      )),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    icon: const Icon(
+                                      Icons.arrow_back_outlined,
+                                      size: 30,
+                                      color: Colors.pink,
+                                    ),
+                                  ),
                                 )
                               ],
                             ),
@@ -115,16 +116,18 @@ class _StatePageProductInfoPageForRestaurant
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Expanded(
-                                    child: KH_ShadowCard(
-                                        bgColor: Colors.orange[100],
-                                        outsideMargin: 3,
-                                        borderRadius: 5,
-                                        child: DelivryAndStarAndOpenOrClose(
-                                          colors: Colors.orange,
-                                          text: "4.9",
-                                          icons: ImageAsset.star,
-                                          onTap: () {},
-                                        ))),
+                                  child: KH_ShadowCard(
+                                    bgColor: Colors.orange[100],
+                                    outsideMargin: 3,
+                                    borderRadius: 5,
+                                    child: DelivryAndStarAndOpenOrClose(
+                                      colors: Colors.orange,
+                                      text: "4.9",
+                                      icons: ImageAsset.star,
+                                      onTap: () {},
+                                    ),
+                                  ),
+                                ),
 
                                 //@@@@@@@@//@@@@@@@@@//
                                 //@@@@@@@@//@@@@@@@@@//
