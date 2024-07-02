@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -43,18 +43,21 @@ class SettingsProfilePage extends StatelessWidget {
     ];
 
     return Scaffold(
-      bottomNavigationBar: BottomNavigatiomBarProfile(
-        deletAcconut: () {},
-        editData: () {},
-      ),
+      //@@@@@@@@@@@@@@@@@//
+
       backgroundColor: const Color(0xffF3F6FF),
       appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            "Profile",
-            style: TextStyle(fontSize: 18, color: Colors.pink),
-          )),
+        centerTitle: true,
+        title: const Text(
+          "Profile",
+          style: TextStyle(fontSize: 18, color: Colors.pink),
+        ),
+      ),
+
+      //@@@@@@@@@@@@@@@@@//
+
       body: SafeArea(
+        minimum: EdgeInsets.all(10),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -78,13 +81,18 @@ class SettingsProfilePage extends StatelessWidget {
               ...List.generate(
                 contentstextform.length,
                 (index) => KH_FormTextField(
-                  fillColor: const Color(0xffF3F3F3),
+                  fillColor: Colors.grey[100],
                   isFilled: true,
                   leadingInnerPrefixIconOrWidget: contentstextform[index]
                       ["icon"],
                   lablTitleText: contentstextform[index]["lablTitleText"],
                   placeHolder: contentstextform[index]["placeHolder"],
                 ),
+              ),
+
+              BottomNavigatiomBarProfile(
+                deletAcconut: () {},
+                editData: () {},
               ),
             ],
           ),
@@ -105,45 +113,38 @@ class BottomNavigatiomBarProfile extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-
-            decoration: BoxDecoration(
-                color: const Color(0xffDF3480),
-                borderRadius: BorderRadius.circular(20)),
-            width: 400,
-            child: MaterialButton(
-              onPressed: editData,
-              textColor: Colors.white,
-              child: const Text("تعديل البيانات",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            )),
-
-        //@@@@@@@@//@@@@@@@@@//
-        //@@@@@@@@//@@@@@@@@@//
-        //@@@@@@@@//@@@@@@@@@//
-
-        const SizedBox(height: 30),
-        Container(
-          width: 400,
-          decoration: BoxDecoration(
-              color: const Color(0xffe1366a),
-              borderRadius: BorderRadius.circular(20)),
-          child: MaterialButton(
-            onPressed: deletAcconut,
-            textColor: Colors.white,
-            child: const Text(
-              " حذف الحساب  ",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+        KH_Filled_Bottun(
+          margin: EdgeInsets.only(top: 30, bottom: 20),
+          width: double.infinity,
+          onPressed: () {},
+          bgColor: const Color(0xffe1366a),
+          child: const Text(
+            "Edit",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
+
+        //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
+        //@@@@@@@@//@@@@@@@@@//
+
+        KH_Filled_Bottun(
+          margin: EdgeInsets.only(bottom: 20),
+          width: double.infinity,
+          onPressed: () {},
+          bgColor: const Color(0xffe1366a),
+          child: const Text(
+            "delete account ",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+
         const SizedBox(height: 20),
       ],
     );

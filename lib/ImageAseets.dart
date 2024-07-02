@@ -51,10 +51,11 @@ class ImageAsset {
   static const String delivery = "$iconsimages/icons8-delivery-100.png";
   static const String checkbox = "$iconsimages/icons8-checkbox-100.png";
   static const String money = "$iconsimages/icons8-money-100.png";
-  static const String recycleBin = "$iconsimages/icons8-recycle-bin-100.png";
+  static const String recycleBin = "$iconsimages/img.icons8.png";
   static const String note = "$iconsimages/icons8-note-48.png";
   static const String basketShoppimg = "$iconsimages/icons8-basket-100.png";
   static const String card = "$iconsimages/icons8-card-48.png";
+  static const String groupPeople = "$iconsimages/icons8-crowd-100.png";
 
   //@@@@@@@@//@@@@@@@@@//
   //@@@@@@@@//@@@@@@@@@//PAGE CONUTACTS
@@ -73,6 +74,6 @@ class ImageAsset {
   //@@@@@@@@//@@@@@@@@@//  Lottie
   //@@@@@@@@//@@@@@@@@@//
 
-  static const String locationLottie = "$lottie/Animation-1717942622036.json";
-  static const String officeLottie = "$lottie/Animation-1717942834820.json";
+  static const String locationLottie = "$lottie/Animation - 1717942622036.json";
+  static const String office = "$lottie/Animation - 1715432949668.json";
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
+import 'package:lottie/lottie.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -32,11 +33,12 @@ class SettingsOpenYourStorePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF3F6FF),
       appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            "Open Your Store",
-            style: TextStyle(fontSize: 18, color: Colors.pink),
-          )),
+        centerTitle: true,
+        title: const Text(
+          "Open Your Store",
+          style: TextStyle(fontSize: 18, color: Colors.pink),
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -44,44 +46,40 @@ class SettingsOpenYourStorePage extends StatelessWidget {
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@// LOGOO PAGE
               //@@@@@@@@//@@@@@@@@@//
-
-              Container(
-                alignment: Alignment.center,
-                height: 200,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(ImageAsset.kolmall),
-                ),
-              ),
+              Lottie.asset(ImageAsset.office, height: 200),
 
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@// TYPE COUNTACTS
               //@@@@@@@@//@@@@@@@@@//
 
-              Container(
-                height: 600,
-                child: GridView.builder(
-                  scrollDirection: Axis.vertical,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemCount: contentsCountact.length,
-                  itemBuilder: (context, index) {
-                    return KH_ShadowCard(
-                        outsideMarginvertical: 30,
-                        borderRadius: 30,
-                        height: double.infinity,
-                        innerPaddingvertical: 30,
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "${contentsCountact[index]["image"]}",
-                              height: 40,
-                            ),
-                            Text('${contentsCountact[index]["text"]}'),
-                          ],
-                        ));
-                  },
+              GridView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  mainAxisSpacing: 20,
+                  crossAxisCount: 2,
+                  mainAxisExtent: 140,
                 ),
+                itemCount: contentsCountact.length,
+                itemBuilder: (context, index) {
+                  return KH_ShadowCard(
+                      borderRadius: 30,
+                      innerPaddingvertical: 30,
+                      child: Column(
+                        children: [
+                          //@@@@@@@@@@@@@@@@@//
+
+                          Image.asset(
+                            "${contentsCountact[index]["image"]}",
+                            height: 40,
+                          ),
+
+                          //@@@@@@@@@@@@@@@@@//
+
+                          Text('${contentsCountact[index]["text"]}'),
+                        ],
+                      ));
+                },
               ),
             ],
           ),

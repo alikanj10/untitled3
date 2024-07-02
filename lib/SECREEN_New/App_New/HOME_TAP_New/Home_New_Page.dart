@@ -2,13 +2,13 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/Restaurant_New_Page.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/Notifications_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/Restaurant_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/TapBarController.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 import 'package:untitled3/generated/l10n.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -46,9 +46,6 @@ class _HomeNewState extends State<HomeNew> {
 
   @override
   Widget build(BuildContext context) {
-    final _languageProvider =
-        Provider.of<LanguageProvider>(context, listen: false);
-
     //@@@@@@@@//@@@@@@@@@//
 
     final _ss = S.of(context);
@@ -80,9 +77,7 @@ class _HomeNewState extends State<HomeNew> {
                     //@@@@@@@@//@@@@@@@@@//
 
                     AppBarHomeNew(
-                      onPressdbell: () {},
                       onPressdlocation: () {},
-                      onPressdref: () {},
                     ),
 
                     //@@@@@@@@//@@@@@@@@@//
@@ -141,7 +136,8 @@ class _HomeNewState extends State<HomeNew> {
                     AdvetismentSliderNew2()
                   ],
                 ),
-              )),
+              ),
+            ),
     );
   }
 }
@@ -172,20 +168,21 @@ class AppBarHomeNew extends StatelessWidget {
         //@@@@@@@@//@@@@@@@@@//
         //@@@@@@@@//@@@@@@@@@//
 
-        Expanded(
-          flex: 1,
-          child: KH_ShadowCard(
-            innerPaddingvertical: 5,
-            outsideMarginvertical: 15,
-            outsideMargin: 4,
-            child: MaterialButton(
-              onPressed: onPressdbell,
-              child: Image.asset(
-                ImageAsset.bell,
-                fit: BoxFit.cover,
-                width: 40,
-                height: 40,
-              ),
+        KH_ShadowCard(
+          width: 60,
+          innerPaddingvertical: 5,
+          outsideMarginvertical: 15,
+          outsideMargin: 4,
+          child: MaterialButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => NotificationsPage()));
+            },
+            child: Image.asset(
+              ImageAsset.bell,
+              fit: BoxFit.cover,
+              width: 40,
+              height: 40,
             ),
           ),
         ),
@@ -195,7 +192,6 @@ class AppBarHomeNew extends StatelessWidget {
         //@@@@@@@@//@@@@@@@@@//
 
         Expanded(
-          flex: 4,
           child: KH_ShadowCard(
             innerPaddingvertical: 5,
             outsideMargin: 13,
@@ -216,19 +212,20 @@ class AppBarHomeNew extends StatelessWidget {
         //@@@@@@@@//@@@@@@@@@//
         //@@@@@@@@//@@@@@@@@@//
 
-        Expanded(
-          flex: 1,
-          child: KH_ShadowCard(
-            outsideMargin: 4,
-            innerPaddingvertical: 5,
-            child: MaterialButton(
-              onPressed: onPressdref,
-              child: Image.asset(
-                ImageAsset.ref,
-                height: 35,
-                width: 35,
-                fit: BoxFit.cover,
-              ),
+        KH_ShadowCard(
+          width: 60,
+          outsideMargin: 4,
+          innerPaddingvertical: 5,
+          child: MaterialButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => TabBarController()));
+            },
+            child: Image.asset(
+              ImageAsset.ref,
+              height: 35,
+              width: 35,
+              fit: BoxFit.cover,
             ),
           ),
         ),
@@ -311,7 +308,7 @@ class _HomeNewAdvetismentsSliderCourserState
                 reverse: false,
                 autoPlay: true,
                 viewportFraction: 1,
-                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayInterval: const Duration(seconds: 2),
                 autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enlargeCenterPage: true,
@@ -477,7 +474,7 @@ class AdvetismentSliderNew extends StatelessWidget {
     List imagename = [ImageAsset.eat, ImageAsset.ecommerce];
     Map<dynamic, dynamic> name = {0: "AVON", 1: "PEITZA"};
     return Container(
-      height: 130,
+      height: 140,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: imagename.length,
@@ -546,7 +543,7 @@ class AdvetismentSliderNew2 extends StatelessWidget {
     List imagename = [ImageAsset.eat, ImageAsset.ecommerce];
     Map<dynamic, dynamic> name = {0: "AVON", 1: "PEITZA"};
     return Container(
-      height: 160,
+      height: 150,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: imagename.length,

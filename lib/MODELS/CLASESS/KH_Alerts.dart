@@ -4,7 +4,7 @@ import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 import 'KH_Responsivness.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN/AUTH/VerifiyCodePage.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/TapBarController.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/SECREEN_New/AUTH_New/VerifiyCodePage.dart';
+import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/TapBarController.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -58,14 +58,14 @@ class Login extends StatelessWidget {
                 children: [
                   Expanded(
                       flex: 1,
-                      child: KH_TextField(
+                      child: KH_FormTextField(
                         borderRadius: 30,
                         padding: const EdgeInsets.all(10),
                         placeHolder: "Code country",
                       )),
                   Expanded(
                     flex: 2,
-                    child: KH_TextField(
+                    child: KH_FormTextField(
                       borderRadius: 30,
                       padding: const EdgeInsets.all(10),
                       placeHolder: "Enter your mobile number",
@@ -83,7 +83,7 @@ class Login extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(
-                      child: KH_TextField(
+                      child: KH_FormTextField(
                         leadingInnerPrefixIconOrWidget: const Icon(Icons.lock),
                         trailingInnerPrefixIconOrWidget: IconButton(
                             onPressed: () {},
@@ -94,7 +94,8 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      child: KH_TextField(
+                      child: KH_FormTextField(
+                        onValidating: (val) {},
                         leadingInnerPrefixIconOrWidget:
                             const Icon(Icons.person),
                         placeHolder: "Enter your name",
@@ -159,24 +160,19 @@ class Login extends StatelessWidget {
               //@@@@@@@@@@@@@@@@@@
               //@@@@@@@@@@@@@@@@@@
 
-              Container(
-                margin: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Colors.pink[50],
-                    borderRadius: BorderRadius.circular(20)),
-                child: KH_Bordered_Bottun(
-                  title: "Continue as guest ",
-                  height: 25,
-                  width: 250,
-                  borderColor: Colors.pink[50],
-                  textColor: Colors.pink,
-                  backGroundColor: Colors.pink,
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
+              KH_Filled_Bottun(
+                title: "Continue as guest ",
+                width: 250,
+                borderColor: Colors.pink[50],
+                bgColor: Colors.pink[50],
+                textColor: Colors.pink,
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
                       builder: (context) => TabBarController(),
-                    ));
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
 
               //@@@@@@@@@@@@@@@@@@

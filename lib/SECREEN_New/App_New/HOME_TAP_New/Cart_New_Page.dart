@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 import 'package:flutter/src/cupertino/sliding_segmented_control.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -60,6 +61,10 @@ class _StateCart extends State<Cart> {
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
+
+              SizedBox(
+                height: 10,
+              ),
 
               KH_Filled_Bottun(
                 onPressed: () {},
@@ -198,6 +203,9 @@ class OrderDetailsCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _theme = Theme.of(context);
+    // final _KH_Colors = _theme.extension<KH_Colors>()!;
+
     return KH_ShadowCard(
       outsideMarginvertical: 20,
       child: Column(
@@ -215,13 +223,13 @@ class OrderDetailsCart extends StatelessWidget {
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//
 
-                    const Text(
+                    Text(
                   "Peudect name",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: _theme.textTheme.bodyMedium?.copyWith(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
                     color: Colors.pink,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -240,7 +248,7 @@ class OrderDetailsCart extends StatelessWidget {
 
                   //@@@@@@@@//@@@@@@@@@//
 
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
 
@@ -271,10 +279,97 @@ class OrderDetailsCart extends StatelessWidget {
                 outsideMarginvertical: 10,
                 innerPadding: 0,
                 innerPaddingvertical: 8,
-                child: const Text(
-                  " price and Quantity ",
+                child: Text(
+                  "  price and Quantity ",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: _theme.textTheme.bodyMedium?.copyWith(
+                    fontSize: 16,
+                    color: Colors.pink,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+
+              Container(
+                color: Colors.grey,
+                width: 1,
+                height: 25,
+              ),
+
+              //@@@@@@@@//@@@@@@@@@//
+
+              const SizedBox(
+                width: 30,
+              ),
+
+              //@@@@@@@@//@@@@@@@@@//
+
+              Text(
+                Price,
+                textAlign: TextAlign.center,
+                style: _theme.textTheme.bodyMedium?.copyWith(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+
+              KH_ShadowCard(
+                height: 40,
+                width: 40,
+                bgColor: Colors.pink[50],
+                borderRadius: 10,
+                outsideMarginvertical: 10,
+                innerPaddingvertical: 8,
+                child: Text(
+                  Count,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+
+              KH_ShadowCard(
+                bgColor: Colors.pink[50],
+                borderRadius: 10,
+                height: 40,
+                width: 40,
+                innerPaddingvertical: 0,
+                outsideMargin: 10,
+                child: Image.asset(
+                  ImageAsset.recycleBin,
+                  height: 25,
+                ),
+              ),
+            ],
+          ),
+
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+
+          const Divider(height: 2, color: Colors.grey),
+
+          Row(
+            children: [
+              KH_ShadowCard(
+                width: 150,
+                bgColor: Colors.pink[50],
+                outsideMarginvertical: 10,
+                innerPaddingvertical: 5,
+                child: Text(
+                  " Options ",
+                  textAlign: TextAlign.center,
+                  style: _theme.textTheme.bodyMedium?.copyWith(
+                    fontSize: 16,
                     color: Colors.pink,
                     fontWeight: FontWeight.bold,
                   ),
@@ -295,105 +390,18 @@ class OrderDetailsCart extends StatelessWidget {
 
                   //@@@@@@@@//@@@@@@@@@//
 
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
 
                   //@@@@@@@@//@@@@@@@@@//
 
                   Text(
-                    Price,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  KH_ShadowCard(
-                    height: 40,
-                    width: 40,
-                    bgColor: Colors.pink[50],
-                    borderRadius: 10,
-                    outsideMarginvertical: 10,
-                    innerPaddingvertical: 8,
-                    child: Text(
-                      Count,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-                  //@@@@@@@@//@@@@@@@@@//
-
-                  KH_ShadowCard(
-                    bgColor: Colors.pink[50],
-                    borderRadius: 10,
-                    height: 40,
-                    width: 40,
-                    innerPaddingvertical: 0,
-                    outsideMargin: 10,
-                    child: Image.asset(
-                      ImageAsset.recycleBin,
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-          //@@@@@@@@//@@@@@@@@@//
-
-          const Divider(height: 2, color: Colors.grey),
-
-          Row(
-            children: [
-              KH_ShadowCard(
-                width: 150,
-                bgColor: Colors.pink[50],
-                outsideMarginvertical: 10,
-                innerPaddingvertical: 5,
-                child: const Text(
-                  " Options ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.pink, fontWeight: FontWeight.bold),
-                ),
-              ),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-
-              Row(
-                children: [
-                  Container(
-                    color: Colors.grey,
-                    width: 1,
-                    height: 25,
-                  ),
-
-                  //@@@@@@@@//@@@@@@@@@//
-
-                  SizedBox(
-                    width: 10,
-                  ),
-
-                  //@@@@@@@@//@@@@@@@@@//
-
-                  const Text(
                     "  _ _ _ _ _  ",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: _theme.textTheme.bodyMedium?.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -422,16 +430,56 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
   //@@@@@@@@//@@@@@@@@@//
 
   Map<Object, Widget> children = {
-    0: const Text("توصيل"),
-    1: const Text("استلام"),
+    0: Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text(
+        "deliveriy",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+    1: Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text(
+        "pick-up",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
   };
 
   //@@@@@@@@//@@@@@@@@@//
 
   Map<Object, Widget> children2 = {
-    0: const Text("بطاقة"),
-    1: const Text("كاش"),
-    2: const Text("تحويل بنك "),
+    0: Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text(
+        " card",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+    1: Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text(
+        "cash",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+    2: Container(
+      padding: const EdgeInsets.all(8),
+      child: const Text(
+        " bank transfe ",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
   };
 
   //@@@@@@@@//@@@@@@@@@//
@@ -443,6 +491,9 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
 
   @override
   Widget build(BuildContext context) {
+    final _theme = Theme.of(context);
+    // final _KH_Colors = _theme.extension<KH_Colors>()!;
+
     return KH_ShadowCard(
       child: Column(
         children: [
@@ -450,25 +501,35 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//   ExpansionTile Payment and delivery settings
             //@@@@@@@@//@@@@@@@@@//
-
             leading: Image.asset(
               ImageAsset.basketShoppimg,
-              height: 35,
+              height: 30,
             ),
-            title: const Text(
+            title: Text(
               "Payment and delivery settings",
-              style: TextStyle(
+              style: _theme.textTheme.bodyMedium?.copyWith(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-
+            iconColor: Colors.pink,
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
             //@@@@@@@@//@@@@@@@@@//
 
             children: [
-              const Text("نوع الطلب "),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.all(8),
+                child: Text(
+                  "order type",
+                  style: _theme.textTheme.bodyMedium?.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
               Container(
                 margin: const EdgeInsets.all(10),
                 width: double.infinity,
@@ -489,7 +550,17 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
 
-              const Text(" طريقة الدفع "),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.all(8),
+                child: Text(
+                  " paymebt method",
+                  style: _theme.textTheme.bodyMedium?.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
 
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
@@ -521,7 +592,7 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                 borderColor: Colors.pink[50],
                 bgColor: Colors.pink[50],
                 width: double.infinity,
-                title: "وقف التوصيل المتوقع : 30 دقيقة ",
+                title: "expected delivrey time : 30 minutes",
               ),
             ],
           ),
@@ -533,73 +604,76 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
           //@@@@@@@@//@@@@@@@@@//
 
           ExpansionTile(
-              leading: Image.asset(
-                ImageAsset.location,
-                height: 35,
-              ),
+            iconColor: Colors.pink,
 
+            leading: Image.asset(
+              ImageAsset.location,
+              height: 30,
+            ),
+
+            //@@@@@@@@//@@@@@@@@@//
+
+            title: Text(
+              "Select the delivery address",
+              style: _theme.textTheme.bodyMedium?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            //@@@@@@@@//@@@@@@@@@//
+
+            children: [
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
 
-              title: const Text(
-                "Select the delivery address",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              //@@@@@@@@//@@@@@@@@@//
-
-              children: [
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@//
-                //@@@@@@@@//@@@@@@@@@//
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: KH_Filled_Bottun(
-                        margin: EdgeInsets.all(5),
-                        onPressed: () {},
-                        borderColor: Colors.pink[50],
-                        bgColor: Colors.pink[50],
-                        child: const Text(
-                          "اضف عنوان جديد",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.pink),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: KH_Filled_Bottun(
+                      height: 40,
+                      margin: const EdgeInsets.all(5),
+                      onPressed: () {},
+                      borderColor: Colors.pink[50],
+                      bgColor: Colors.pink[50],
+                      child: Text(
+                        "add neew address",
+                        style: _theme.textTheme.bodyMedium?.copyWith(
+                          fontSize: 16,
+                          color: Colors.pink,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
+                  ),
 
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
+                  //@@@@@@@@//@@@@@@@@@//
+                  //@@@@@@@@//@@@@@@@@@//
+                  //@@@@@@@@//@@@@@@@@@//
 
-                    Expanded(
-                      child: KH_Filled_Bottun(
-                        margin: const EdgeInsets.all(5),
-                        onPressed: () {},
-                        borderColor: Colors.pink[50],
-                        bgColor: Colors.pink[50],
-                        child: const Text(
-                          "ادارة عنوانك",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.pink,
-                          ),
+                  Expanded(
+                    child: KH_Filled_Bottun(
+                      height: 40,
+                      margin: const EdgeInsets.all(5),
+                      onPressed: () {},
+                      borderColor: Colors.pink[50],
+                      bgColor: Colors.pink[50],
+                      child: Text(
+                        "manage your addresses",
+                        style: _theme.textTheme.bodyMedium?.copyWith(
+                          fontSize: 16,
+                          color: Colors.pink,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
-                  ],
-                )
-              ]),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
 
           const Divider(color: Colors.grey, height: 5),
 
@@ -608,69 +682,66 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
           //@@@@@@@@//@@@@@@@@@//
 
           ExpansionTile(
+            iconColor: Colors.pink,
+
             leading: Image.asset(
               ImageAsset.card,
-              height: 35,
+              height: 30,
             ),
-            title: const Text(
+            title: Text(
               "Do you have a coupon ?",
-              style: TextStyle(
+              style: _theme.textTheme.bodyMedium?.copyWith(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
+
+            //@@@@@@@@//@@@@@@@@@//
+
             children: [
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              Container(
-                margin: const EdgeInsets.only(right: 10, left: 10),
-                child: Row(
-                  children: [
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
-                    //@@@@@@@@//@@@@@@@@@//
+              Row(
+                children: [
+                  //@@@@@@@@//@@@@@@@@@//
 
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 250,
-                      child: KH_FormTextField(
-                        borderWidth: 0,
-                        horizontalPadding: 0,
-                        virticalHeight: 15,
-                        padding: EdgeInsets.all(10),
-                        leadingInnerPrefixIconOrWidget:
-                            Icon(Icons.add_outlined),
-                        placeHolder: "Enter Coupon",
-                        fillColor: Colors.grey[200],
-                        isFilled: true,
+                  Expanded(
+                    child: KH_FormTextField(
+                      borderWidth: 0,
+                      horizontalPadding: 0,
+                      borderRadius: 16,
+                      virticalHeight: 15,
+                      padding: const EdgeInsets.all(10),
+                      leadingInnerPrefixIconOrWidget:
+                          const Icon(Icons.add_outlined),
+                      placeHolder: "Enter Coupon",
+                      fillColor: Colors.grey[200],
+                      isFilled: true,
+                    ),
+                  ),
+
+                  //@@@@@@@@//@@@@@@@@@//
+
+                  KH_Filled_Bottun(
+                    margin: const EdgeInsets.all(7),
+                    onPressed: () {},
+                    borderColor: Colors.pink,
+                    bgColor: Colors.white,
+                    borderWidth: 2,
+                    child: Text(
+                      "Apply",
+                      style: _theme.textTheme.bodyMedium?.copyWith(
+                        fontSize: 16,
+                        color: Colors.pink,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-
-                    //@@@@@@@@//@@@@@@@@@//
-
-                    KH_Filled_Bottun(
-                      margin: EdgeInsets.all(7),
-                      onPressed: () {},
-                      borderColor: Colors.pink,
-                      bgColor: Colors.white,
-                      borderWidth: 2,
-                      child: const Text(
-                        "Apply",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.pink,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-
-              //@@@@@@@@//@@@@@@@@@//
             ],
           ),
+
+          //@@@@@@@@//@@@@@@@@@//
+
           const Divider(color: Colors.grey, height: 3),
 
           //@@@@@@@@//@@@@@@@@@//
@@ -678,48 +749,44 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
           //@@@@@@@@//@@@@@@@@@//
 
           ExpansionTile(
+            iconColor: Colors.pink,
+
             leading: Image.asset(
               ImageAsset.note,
-              height: 35,
+              height: 30,
             ),
 
             //@@@@@@@@//@@@@@@@@@//
 
-            title: const Text(
+            title: Text(
               "do you want to add any notes ?",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: _theme.textTheme.bodyMedium?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
 
             //@@@@@@@@//@@@@@@@@@//
 
             children: [
               KH_FormTextField(
-                horizontalPadding: 0,
-                virticalHeight: 100,
-                padding: EdgeInsets.all(10),
-                placeHolder: "do you want to add note ?",
+                borderRadius: 20,
+                leftPadding: 10,
+                borderWidth: 0,
+                rightPadding: 10,
+                virticalHeight: 50,
+                padding: const EdgeInsets.all(10),
+                placeHolder: "add your notes here",
+                textAlignment: TextAlign.left,
                 fillColor: Colors.grey[200],
                 isFilled: true,
               ),
-
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-              //@@@@@@@@//@@@@@@@@@//
-
-              KH_Filled_Bottun(
-                onPressed: () {},
-                margin: EdgeInsets.all(10),
-                borderColor: Colors.pink,
-                borderWidth: 2,
-                bgColor: Colors.white,
-                child: const Text(
-                  "Add",
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.pink),
-                ),
+              SizedBox(
+                height: 10,
               )
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
+              //@@@@@@@@//@@@@@@@@@//
             ],
           ),
         ],

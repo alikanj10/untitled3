@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@       CardForDetilse       @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -75,14 +75,24 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  //@@@@@@@@@@@@@@@@@
+
                   Text(
                     nameresturantorecommers,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                    style: _theme.textTheme.bodyMedium?.copyWith(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+
+                  //@@@@@@@@@@@@@@@@@
+
                   const SizedBox(
                     height: 5,
                   ),
+
+                  //@@@@@@@@@@@@@@@@@
+
                   Text(
                     contentRestOrEcomm,
                     style: const TextStyle(
@@ -91,15 +101,23 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
 
+                  //@@@@@@@@@@@@@@@@@
+
                   const SizedBox(
                     height: 6,
                   ),
+
+                  //@@@@@@@@@@@@@@@@@
+
                   Divider(
                     height: 5,
                     color: Colors.grey[400],
                   ),
+
+                  //@@@@@@@@@@@@@@@@@
+
                   const SizedBox(
-                    height: 6,
+                    height: 8,
                   ),
 
                   //@@@@@@@@//@@@@@@@@@//
@@ -117,6 +135,8 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              //@@@@@@@@@@@@@@@@@
+
                               Image.asset(
                                 ImageAsset.star,
                                 height: 25,
@@ -124,6 +144,9 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                               const SizedBox(
                                 width: 2,
                               ),
+
+                              //@@@@@@@@@@@@@@@@@
+
                               Text(
                                 evaluationNumber,
                                 style: _theme.textTheme.bodyMedium?.copyWith(
@@ -147,6 +170,8 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              //@@@@@@@@@@@@@@@@@
+
                               Image.asset(
                                 ImageAsset.delivery,
                                 height: 25,
@@ -154,6 +179,9 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                               const SizedBox(
                                 width: 2,
                               ),
+
+                              //@@@@@@@@@@@@@@@@@
+
                               Text(
                                 pricedelivry,
                                 style: _theme.textTheme.bodyMedium?.copyWith(
@@ -177,6 +205,8 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              //@@@@@@@@@@@@@@@@@
+
                               Image.asset(
                                 ImageAsset.checkbox,
                                 height: 25,
@@ -184,15 +214,14 @@ class CardForDetilseEcommersAndResturant extends StatelessWidget {
                               const SizedBox(
                                 width: 2,
                               ),
+
+                              //@@@@@@@@@@@@@@@@@
+
                               Text(
                                 openOrClosed,
                                 style: _theme.textTheme.bodyMedium?.copyWith(
                                   color: _KH_Colors.GreenColor,
                                 ),
-                                // TextStyle(
-                                //   color: Colors.green,
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                             ],
                           ),

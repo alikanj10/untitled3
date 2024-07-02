@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
 // import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN/AUTH/LoginPage.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/SECREEN_New/AUTH_New/LoginPage.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 // import 'package:untitled3/generated/l10n.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//

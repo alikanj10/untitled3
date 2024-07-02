@@ -5,15 +5,15 @@ import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN/AUTH/LoginPage.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/TapBarController.dart';
-import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsAboutTheAppPage.dart';
+import 'package:untitled3/SECREEN_New/AUTH_New/LoginPage.dart';
+import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/TapBarController.dart';
+import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsAboutTheAppPage.dart';
 
-import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsCountactUsPage.dart';
-import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsLocationPage.dart';
-import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsOpenYourStorePage.dart';
-import 'package:untitled3/SECREEN/App/SETTINGS_TAP/SettingsProfilePage.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsCountactUsPage.dart';
+import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsLocationPage.dart';
+import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsOpenYourStorePage.dart';
+import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsProfilePage.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 import 'package:untitled3/generated/l10n.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
@@ -34,13 +34,16 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF3F6FF),
       appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            "Settings",
-            style: TextStyle(fontSize: 18, color: Colors.pink),
-          )),
+        centerTitle: true,
+        title: const Text(
+          "Settings",
+          style: TextStyle(fontSize: 18, color: Colors.pink),
+        ),
+      ),
+
+      //@@@@@@@@//@@@@@@@@@//
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -74,13 +77,14 @@ class Settings extends StatelessWidget {
               //@@@@@@@@//@@@@@@@@@//
 
               SectionsOfTheSettingspage(
-                text: "Location",
+                text: "Delivery Addresses",
                 image: ImageAsset.location,
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const SettingsLocationPage()));
                 },
               ),
+
               const BottomSheetLang(),
 
               //@@@@@@@@//@@@@@@@@@//

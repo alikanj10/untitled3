@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN/App/HOME_TAP/ProdactInforamtionRestaurants_New_Page.dart';
-import 'package:untitled3/VIEW/AdvetismentsSliderCourser.dart';
-import 'package:untitled3/VIEW/CardForDetilesShopeAndRestarant.dart';
-import 'package:untitled3/VIEW/KH_Componants.dart';
+import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/ProdactInforamtionRestaurants_New_Page.dart';
+import 'package:untitled3/VIEW_New/AdvetismentsSliderCourser.dart';
+import 'package:untitled3/VIEW_New/CardForDetilesShopeAndRestarant.dart';
+import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 //@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
@@ -33,9 +33,11 @@ class _StateRestutantNew extends State<RestutantNew> {
   void initState() {
     isloading = false;
     Future.delayed(const Duration(seconds: 3), () {
-      setState(() {
-        isloading = true;
-      });
+      setState(
+        () {
+          isloading = true;
+        },
+      );
     });
     super.initState();
   }
@@ -70,8 +72,10 @@ class _StateRestutantNew extends State<RestutantNew> {
         centerTitle: true,
         title: const Text(
           "نتائج البحث ",
-          style:
-              TextStyle(color: Colors.pinkAccent, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.pinkAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 18),
         ),
       ),
       body: isloading == false
@@ -161,8 +165,8 @@ class _StateRestutantNew extends State<RestutantNew> {
                     //@@@@@@@@//@@@@@@@@@//
 
                     CardForDetilseEcommersAndResturant(
-                      nameresturantorecommers: "القبطان",
-                      contentRestOrEcomm: "شاورما , كربسيي",
+                      nameresturantorecommers: "Hatay Kaptan",
+                      contentRestOrEcomm: "Shawrma . western .",
                       openOrClosed: "open",
                       image: ImageAsset.eat,
                       evaluationNumber: " 4.99",
