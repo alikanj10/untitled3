@@ -76,12 +76,13 @@ class _OrderPageState extends State<OrderPage> {
                             borderRadius: 8,
                             innerPadding: 8,
                             outsideMargin: 8,
-                            innerPaddingvertical: 5,
+                            innerPaddingvertical: 8,
                             child: Text(
                               "Name Ecommerce",
                               textAlign: TextAlign.center,
                               style: _theme.textTheme.bodyMedium?.copyWith(
                                 color: Colors.pink,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -98,10 +99,14 @@ class _OrderPageState extends State<OrderPage> {
 
                         //@@@@@@@@@@@@@@@@@//
 
-                        const Expanded(
+                        Expanded(
                           child: Text(
                             "Ecommerce",
                             textAlign: TextAlign.center,
+                            style: _theme.textTheme.bodyMedium?.copyWith(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         )
                       ],
@@ -130,12 +135,13 @@ class _OrderPageState extends State<OrderPage> {
                             borderRadius: 8,
                             innerPadding: 8,
                             outsideMargin: 8,
-                            innerPaddingvertical: 5,
+                            innerPaddingvertical: 8,
                             child: Text(
                               "Price",
                               textAlign: TextAlign.center,
                               style: _theme.textTheme.bodyMedium?.copyWith(
                                 color: Colors.pink,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -152,10 +158,14 @@ class _OrderPageState extends State<OrderPage> {
 
                         //@@@@@@@@@@@@@@@@@//
 
-                        const Expanded(
+                        Expanded(
                           child: Text(
-                            "Ecommerce",
+                            "200",
                             textAlign: TextAlign.center,
+                            style: _theme.textTheme.bodyMedium?.copyWith(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         )
                       ],
@@ -184,12 +194,13 @@ class _OrderPageState extends State<OrderPage> {
                             borderRadius: 8,
                             innerPadding: 8,
                             outsideMargin: 8,
-                            innerPaddingvertical: 5,
+                            innerPaddingvertical: 8,
                             child: Text(
                               "Status Order",
                               textAlign: TextAlign.center,
                               style: _theme.textTheme.bodyMedium?.copyWith(
                                 color: Colors.pink,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -217,6 +228,7 @@ class _OrderPageState extends State<OrderPage> {
                               textAlign: TextAlign.center,
                               style: _theme.textTheme.bodyMedium?.copyWith(
                                 color: Colors.pink,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

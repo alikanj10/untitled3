@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/ProdactInforamtionRestaurants_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/HOME_TAP_NEW/ProdactInforamtionRestaurants_New_Page.dart';
 import 'package:untitled3/VIEW_New/AdvetismentsSliderCourser.dart';
 import 'package:untitled3/VIEW_New/CardForDetilesShopeAndRestarant.dart';
 import 'package:untitled3/VIEW_New/KH_Componants.dart';
@@ -33,12 +33,11 @@ class _StateRestutantNew extends State<RestutantNew> {
   void initState() {
     isloading = false;
     Future.delayed(const Duration(seconds: 3), () {
-      setState(
-        () {
-          isloading = true;
-        },
-      );
+      setState(() {
+        isloading = true;
+      });
     });
+
     super.initState();
   }
 
@@ -109,12 +108,10 @@ class _StateRestutantNew extends State<RestutantNew> {
                                 selectedColor: Colors.pink[50],
                                 selected: defaultchioseindex == index,
                                 onSelected: (nowSelcted) {
-                                  setState(
-                                    () {
-                                      defaultchioseindex =
-                                          nowSelcted ? index : null;
-                                    },
-                                  );
+                                  setState(() {
+                                    defaultchioseindex =
+                                        nowSelcted ? index : null;
+                                  });
                                 },
                                 label: Text(
                                   "${name[index]}",
@@ -125,7 +122,7 @@ class _StateRestutantNew extends State<RestutantNew> {
                                           ? Colors.pink
                                           : Colors.black),
                                 ),
-                              )
+                              ),
                             ],
                           );
                         },
@@ -184,6 +181,73 @@ class _StateRestutantNew extends State<RestutantNew> {
                 ),
               ),
             ),
+    );
+  }
+}
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@        clean loading       @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
+
+class ShimmerView extends StatelessWidget {
+  const ShimmerView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        margin: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            ShimmerBox(flex: 6, widthFactor: 1),
+            SizedBox(height: 10),
+            ShimmerBox(flex: 1, widthFactor: 1),
+            SizedBox(height: 10),
+            ShimmerBox(flex: 1, widthFactor: 0.75),
+            SizedBox(height: 20),
+            ShimmerBox(flex: 6, widthFactor: 1),
+            SizedBox(height: 10),
+            ShimmerBox(flex: 1, widthFactor: 1),
+            SizedBox(height: 10),
+            ShimmerBox(flex: 1, widthFactor: 0.75),
+            SizedBox(height: 20),
+            ShimmerBox(flex: 6, widthFactor: 1),
+            SizedBox(height: 10),
+            ShimmerBox(flex: 1, widthFactor: 1),
+            SizedBox(height: 10),
+            ShimmerBox(flex: 1, widthFactor: 0.75),
+            SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ShimmerBox extends StatelessWidget {
+  const ShimmerBox({
+    super.key,
+    required this.flex,
+    required this.widthFactor,
+  });
+  final int flex;
+  final double widthFactor;
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: flex,
+      child: FractionallySizedBox(
+        widthFactor: widthFactor,
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.05),
+              borderRadius: BorderRadius.circular(15)),
+        ),
+      ),
     );
   }
 }

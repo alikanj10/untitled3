@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN_New/AUTH_New/RessertPasswordPage.dart';
+import 'package:untitled3/SECREEN_New/AUTH_NEW/RessertPassword_New_Page.dart';
 import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//

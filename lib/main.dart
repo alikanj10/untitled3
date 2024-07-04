@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/TapBarController.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/HOME_TAP_NEW/TapBarController.dart';
 import 'package:untitled3/generated/l10n.dart';
 
 void main() {

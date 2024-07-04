@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
 import 'package:untitled3/VIEW_New/KH_Componants.dart';
 import 'package:flutter/src/cupertino/sliding_segmented_control.dart';
 
@@ -274,13 +273,14 @@ class OrderDetailsCart extends StatelessWidget {
           Row(
             children: [
               KH_ShadowCard(
+                borderRadius: 8,
                 width: 150,
                 bgColor: Colors.pink[50],
                 outsideMarginvertical: 10,
-                innerPadding: 0,
+                innerPadding: 3,
                 innerPaddingvertical: 8,
                 child: Text(
-                  "  price and Quantity ",
+                  "price and Quantity",
                   textAlign: TextAlign.center,
                   style: _theme.textTheme.bodyMedium?.copyWith(
                     fontSize: 16,
@@ -312,7 +312,7 @@ class OrderDetailsCart extends StatelessWidget {
                 Price,
                 textAlign: TextAlign.center,
                 style: _theme.textTheme.bodyMedium?.copyWith(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -321,12 +321,12 @@ class OrderDetailsCart extends StatelessWidget {
               //@@@@@@@@//@@@@@@@@@//
 
               KH_ShadowCard(
-                height: 40,
-                width: 40,
+                height: 35,
+                width: 35,
                 bgColor: Colors.pink[50],
                 borderRadius: 10,
                 outsideMarginvertical: 10,
-                innerPaddingvertical: 8,
+                innerPaddingvertical: 4,
                 child: Text(
                   Count,
                   textAlign: TextAlign.center,
@@ -339,14 +339,12 @@ class OrderDetailsCart extends StatelessWidget {
 
               KH_ShadowCard(
                 bgColor: Colors.pink[50],
-                borderRadius: 10,
-                height: 40,
-                width: 40,
-                innerPaddingvertical: 0,
-                outsideMargin: 10,
+                borderRadius: 8,
+                innerPadding: 0,
+                outsideMargin: 0,
                 child: Image.asset(
                   ImageAsset.recycleBin,
-                  height: 25,
+                  height: 35,
                 ),
               ),
             ],
@@ -361,6 +359,7 @@ class OrderDetailsCart extends StatelessWidget {
           Row(
             children: [
               KH_ShadowCard(
+                borderRadius: 8,
                 width: 150,
                 bgColor: Colors.pink[50],
                 outsideMarginvertical: 10,
@@ -474,7 +473,7 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
     2: Container(
       padding: const EdgeInsets.all(8),
       child: const Text(
-        " bank transfe ",
+        "bank transfe",
         style: TextStyle(
           fontWeight: FontWeight.bold,
         ),
@@ -627,23 +626,23 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@//
-
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: KH_Filled_Bottun(
+                    child: KH_SplashedCard(
                       height: 40,
-                      margin: const EdgeInsets.all(5),
-                      onPressed: () {},
-                      borderColor: Colors.pink[50],
+                      outsideMargin: 5,
+                      borderRadius: 8,
+                      outsideMarginvertical: 8,
+                      innerPaddingvertical: 6,
+                      onTapping: () {},
                       bgColor: Colors.pink[50],
                       child: Text(
-                        "add neew address",
+                        "add new address",
+                        textAlign: TextAlign.center,
                         style: _theme.textTheme.bodyMedium?.copyWith(
                           fontSize: 16,
                           color: Colors.pink,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -654,18 +653,20 @@ class _StateExpansionTileInCart extends State<ExpansionTileInCart> {
                   //@@@@@@@@//@@@@@@@@@//
 
                   Expanded(
-                    child: KH_Filled_Bottun(
+                    child: KH_SplashedCard(
+                      outsideMarginvertical: 8,
                       height: 40,
-                      margin: const EdgeInsets.all(5),
-                      onPressed: () {},
-                      borderColor: Colors.pink[50],
+                      outsideMargin: 5,
+                      borderRadius: 8,
+                      innerPaddingvertical: 6,
+                      onTapping: () {},
                       bgColor: Colors.pink[50],
                       child: Text(
-                        "manage your addresses",
+                        "manage addresses",
+                        textAlign: TextAlign.center,
                         style: _theme.textTheme.bodyMedium?.copyWith(
                           fontSize: 16,
                           color: Colors.pink,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

@@ -1453,6 +1453,8 @@ class KH_SplashedCard extends StatelessWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
+  final double? innerPaddingvertical;
+  final double? outsideMarginvertical;
   final Color? bgColor;
   final Color? splashColor;
   final bool? addBorderShadow;
@@ -1475,6 +1477,8 @@ class KH_SplashedCard extends StatelessWidget {
     this.outsideMargin,
     this.isShadowColored = false,
     this.onTapping,
+    this.innerPaddingvertical,
+    this.outsideMarginvertical,
   });
   //@@@@@@@@@@@@@@@//
   //@@@@@@@@@@@@@@@//
@@ -1488,9 +1492,11 @@ class KH_SplashedCard extends StatelessWidget {
     //@@@@@@@@@@@@@@@//
     return Material(
       child: KH_ShadowCard(
+        outsideMarginvertical: outsideMarginvertical,
         borderRadius: borderRadius ?? 16,
         outsideMargin: outsideMargin,
         innerPadding: innerPadding,
+        innerPaddingvertical: innerPaddingvertical,
         bgColor: bgColor ?? _theme.hintColor.withOpacity(0.2),
         addShadow: addShadow,
         width: width ?? null,

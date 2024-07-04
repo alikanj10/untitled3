@@ -5,14 +5,14 @@ import 'package:untitled3/MODELS/CLASESS/KH_BottomSheet.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Helper.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Languages.dart';
 import 'package:untitled3/MODELS/CLASESS/KH_Themes.dart';
-import 'package:untitled3/SECREEN_New/AUTH_New/LoginPage.dart';
-import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/TapBarController.dart';
-import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsAboutTheAppPage.dart';
+import 'package:untitled3/SECREEN_New/AUTH_NEW/Login_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/HOME_TAP_NEW/TapBarController.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/SETTINGS_TAP_NEW/SettingsAboutTheApp_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/SETTINGS_TAP_NEW/SettingsCountactUs_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/SETTINGS_TAP_NEW/SettingsLocation_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/SETTINGS_TAP_NEW/SettingsOpenYourStore_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/SETTINGS_TAP_NEW/SettingsProfile_New_Page.dart';
 
-import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsCountactUsPage.dart';
-import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsLocationPage.dart';
-import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsOpenYourStorePage.dart';
-import 'package:untitled3/SECREEN_New/App_New/SETTINGS_TAP_New/SettingsProfilePage.dart';
 import 'package:untitled3/VIEW_New/KH_Componants.dart';
 import 'package:untitled3/generated/l10n.dart';
 
@@ -80,8 +80,11 @@ class Settings extends StatelessWidget {
                 text: "Delivery Addresses",
                 image: ImageAsset.location,
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SettingsLocationPage()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsLocationPage(),
+                    ),
+                  );
                 },
               ),
 
@@ -99,8 +102,11 @@ class Settings extends StatelessWidget {
                 text: "Countact Us",
                 image: ImageAsset.phone,
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SettingsCountactPage()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsCountactPage(),
+                    ),
+                  );
                 },
               ),
 
@@ -111,8 +117,11 @@ class Settings extends StatelessWidget {
                 text: "About The App",
                 image: ImageAsset.info,
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SettingsAboutTheAppPage()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsAboutTheAppPage(),
+                    ),
+                  );
                 },
               ),
 
@@ -132,8 +141,11 @@ class Settings extends StatelessWidget {
                 text: "Open your free store with us ",
                 image: ImageAsset.store,
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SettingsOpenYourStorePage()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsOpenYourStorePage(),
+                    ),
+                  );
                 },
               ),
 

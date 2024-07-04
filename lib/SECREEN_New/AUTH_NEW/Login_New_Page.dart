@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/ImageAseets.dart';
-import 'package:untitled3/SECREEN_New/AUTH_New/VerifiyCodePage.dart';
-import 'package:untitled3/SECREEN_New/App_New/HOME_TAP_New/TapBarController.dart';
+import 'package:untitled3/SECREEN_New/AUTH_NEW/VerifiyCode_New_Page.dart';
+import 'package:untitled3/SECREEN_New/App_NEW/HOME_TAP_NEW/TapBarController.dart';
 import 'package:untitled3/VIEW_New/KH_Componants.dart';
 
 class Login extends StatelessWidget {
@@ -95,7 +95,6 @@ class Login extends StatelessWidget {
                     ),
                     Expanded(
                       child: KH_FormTextField(
-                        onValidating: (val) {},
                         leadingInnerPrefixIconOrWidget:
                             const Icon(Icons.person),
                         placeHolder: "Enter your name",
