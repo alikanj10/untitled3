@@ -47,10 +47,12 @@ class SettingsAboutTheAppPage extends StatelessWidget {
 
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image.asset(ImageAsset.dozo, height: 200),
+                child: Image.asset(
+                  ImageAsset.dozo,
+                  height: 200,
+                ),
               ),
 
-              //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@// Introductory text
               //@@@@@@@@//@@@@@@@@@//
 
