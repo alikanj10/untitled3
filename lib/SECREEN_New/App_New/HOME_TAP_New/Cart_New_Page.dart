@@ -28,9 +28,9 @@ class _StateCart extends State<Cart> {
       backgroundColor: const Color(0xffF3F6FF),
       appBar: AppBar(
           centerTitle: true,
-          title: const Text(" Cart ",
+          title: const Text("Cart",
               style: TextStyle(
-                  color: Colors.pinkAccent, fontWeight: FontWeight.bold))),
+                  color: Colors.pinkAccent, fontWeight: FontWeight.bold) ,),),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

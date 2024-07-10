@@ -20,9 +20,6 @@ class _NotificationsPageState extends State<NotificationsPage> {
           ),
         ),
       ),
-
-      //@@@@@@@@@@@@@@@@@@//
-
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

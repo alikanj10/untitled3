@@ -53,7 +53,6 @@ class SettingsAboutTheAppPage extends StatelessWidget {
                 ),
               ),
 
-              //@@@@@@@@//@@@@@@@@@//
               //@@@@@@@@//@@@@@@@@@// Introductory text
               //@@@@@@@@//@@@@@@@@@//
 
