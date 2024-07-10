@@ -133,7 +133,7 @@ class _HomeNewState extends State<HomeNew> {
                     //@@@@@@@@//@@@@@@@@@// AdvetismentSliderNew2
                     //@@@@@@@@//@@@@@@@@@//
 
-                    AdvetismentSliderNew2()
+                    AdvetismentSliderNew2(),
                   ],
                 ),
               ),

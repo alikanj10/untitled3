@@ -32,7 +32,7 @@ class _StatePageProductInfoPageForRestaurant
   @override
   void initState() {
     isloading = false;
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         isloading = true;
       });
