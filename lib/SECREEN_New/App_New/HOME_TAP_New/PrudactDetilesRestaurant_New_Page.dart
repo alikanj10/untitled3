@@ -309,7 +309,7 @@ class ContainerPriceAndCartRest extends StatelessWidget {
       children: [
         Expanded(
           child: KH_ShadowCard(
-            bgColor: Colors.green[50],
+            bgColor: const Color(0xffE3F6F4),
             innerPaddingvertical: 8,
             outsideMargin: 0,
             borderRadius: 10,
@@ -330,7 +330,7 @@ class ContainerPriceAndCartRest extends StatelessWidget {
                 Text(
                   price,
                   style: const TextStyle(
-                      color: Colors.green,
+                      color: Colors.teal,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -349,7 +349,7 @@ class ContainerPriceAndCartRest extends StatelessWidget {
             onTap: addtocart,
             child: KH_ShadowCard(
               outsideMargin: 0,
-              bgColor: Colors.green[50],
+              bgColor: const Color(0xffE3F6F4),
               innerPaddingvertical: 8,
               borderRadius: 10,
               child: Row(
@@ -370,7 +370,7 @@ class ContainerPriceAndCartRest extends StatelessWidget {
                   const Text(
                     "add to cart",
                     style: TextStyle(
-                        color: Colors.green,
+                        color: Colors.teal,
                         fontSize: 16,
                         fontWeight: FontWeight.bold),
                   ),

@@ -45,7 +45,7 @@ class ImageAsset {
   static const String profile = "$iconsimages/icons8-male-user-100.png";
 
   static const String favorite = "$iconsimages/icons8-favorite-16.png";
-  static const String favoriteoutline = "$iconsimages/icons8-love-50.png";
+  static const String favoriteoutline = "$iconsimages/icons8-heart-100.png";
   static const String cart = "$iconsimages/download.png";
   static const String star = "$iconsimages/icons8-star-100.png";
   static const String delivery = "$iconsimages/icons8-delivery-100.png";

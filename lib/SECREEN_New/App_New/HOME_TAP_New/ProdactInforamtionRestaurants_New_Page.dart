@@ -122,7 +122,7 @@ class _StatePageProductInfoPageForRestaurant
                             titleColor: Colors.grey,
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 8),
 
                           //@@@@@@@@//@@@@@@@@@//
                           //@@@@@@@@//@@@@@@@@@//
@@ -132,19 +132,37 @@ class _StatePageProductInfoPageForRestaurant
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Expanded(
-                                child: KH_ShadowCard(
-                                  bgColor: Colors.orange[100],
+                                child: KH_SplashedCard(
+                                  onTapping: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (contxet) =>
+                                                const Ratings()));
+                                  },
+                                  bgColor: Color(0xffFDEFE4),
                                   outsideMargin: 3,
                                   borderRadius: 5,
-                                  child: DelivryAndStarAndOpenOrClose(
+                                  child: const DelivryAndStarAndOpenOrClose(
                                     colors: Colors.orange,
                                     text: "4.9",
                                     icons: ImageAsset.star,
-                                    onTap: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (contxet) => Ratings()));
-                                    },
+                                  ),
+                                ),
+                              ),
+
+                              //@@@@@@@@//@@@@@@@@@//
+                              //@@@@@@@@//@@@@@@@@@//
+                              //@@@@@@@@//@@@@@@@@@//
+                              Expanded(
+                                child: KH_SplashedCard(
+                                  onTapping: () {},
+                                  bgColor: const Color(0xffFCE7EE),
+                                  outsideMargin: 3,
+                                  borderRadius: 5,
+                                  child: const DelivryAndStarAndOpenOrClose(
+                                    colors: Colors.pink,
+                                    text: "no delivery",
+                                    icons: ImageAsset.delivery,
                                   ),
                                 ),
                               ),
@@ -154,31 +172,14 @@ class _StatePageProductInfoPageForRestaurant
                               //@@@@@@@@//@@@@@@@@@//
 
                               Expanded(
-                                child: KH_ShadowCard(
-                                  bgColor: Colors.blue[100],
-                                  outsideMargin: 3,
-                                  borderRadius: 5,
-                                  child: DelivryAndStarAndOpenOrClose(
-                                      colors: Colors.blue,
-                                      onTap: () {},
-                                      text: "Free",
-                                      icons: ImageAsset.delivery),
-                                ),
-                              ),
-
-                              //@@@@@@@@//@@@@@@@@@//
-                              //@@@@@@@@//@@@@@@@@@//
-                              //@@@@@@@@//@@@@@@@@@//
-
-                              Expanded(
-                                child: KH_ShadowCard(
+                                child: KH_SplashedCard(
+                                  onTapping: () {},
                                   outsideMarginvertical: 10,
-                                  bgColor: Colors.green[100],
+                                  bgColor: const Color(0xffE3F6F4),
                                   outsideMargin: 3,
                                   borderRadius: 5,
-                                  child: DelivryAndStarAndOpenOrClose(
-                                      colors: Colors.green,
-                                      onTap: () {},
+                                  child: const DelivryAndStarAndOpenOrClose(
+                                      colors: Colors.teal,
                                       text: "Open",
                                       icons: ImageAsset.checkbox),
                                 ),
@@ -190,25 +191,27 @@ class _StatePageProductInfoPageForRestaurant
                           //@@@@@@@@//@@@@@@@@@//
                           //@@@@@@@@//@@@@@@@@@//
 
-                          const Divider(height: 10, color: Colors.grey),
+                          Divider(height: 10, color: Colors.grey[300]),
+
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Expanded(
-                                child: KH_ShadowCard(
+                                child: KH_SplashedCard(
+                                  onTapping: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (contxet) => const Cart(),
+                                      ),
+                                    );
+                                  },
                                   height: 72,
-                                  bgColor: Colors.green[100],
+                                  bgColor: const Color(0xffE6F6F5),
                                   outsideMargin: 5,
+                                  outsideMarginvertical: 4,
                                   borderRadius: 10,
-                                  child: CartAndInfoAndFavorite(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (contxet) =>
-                                                    const Cart()));
-                                      },
-                                      text: "Cart ",
-                                      icons: ImageAsset.cart),
+                                  child: const CartAndInfoAndFavorite(
+                                      text: "Cart ", icons: ImageAsset.cart),
                                 ),
                               ),
 
@@ -218,17 +221,18 @@ class _StatePageProductInfoPageForRestaurant
 
                               Container(
                                 width: 2,
-                                height: 65,
+                                height: 60,
                                 color: Colors.grey[300],
                               ),
                               Expanded(
-                                child: KH_ShadowCard(
+                                child: KH_SplashedCard(
+                                  splashColor: Colors.black,
+                                  onTapping: () {},
                                   height: 72,
-                                  bgColor: Colors.orange[100],
+                                  bgColor: Color(0xffFDEFE4),
                                   outsideMargin: 5,
                                   borderRadius: 10,
-                                  child: CartAndInfoAndFavorite(
-                                    onTap: () {},
+                                  child: const CartAndInfoAndFavorite(
                                     text: "information ",
                                     icons: ImageAsset.info,
                                   ),
@@ -241,13 +245,20 @@ class _StatePageProductInfoPageForRestaurant
 
                               Container(
                                 width: 2,
-                                height: 65,
+                                height: 60,
                                 color: Colors.grey[300],
                               ),
                               Expanded(
-                                child: Favorite(
-                                  text: "Favorite",
-                                  addOrDeleteFavorite: () {},
+                                child: KH_SplashedCard(
+                                  onTapping: () {},
+                                  height: 72,
+                                  bgColor: Colors.grey[250],
+                                  outsideMargin: 5,
+                                  borderRadius: 10,
+                                  child: const CartAndInfoAndFavorite(
+                                    text: "Favorite ",
+                                    icons: ImageAsset.favoriteoutline,
+                                  ),
                                 ),
                               ),
                             ],
@@ -260,26 +271,28 @@ class _StatePageProductInfoPageForRestaurant
                           KH_Filled_Bottun(
                             margin: const EdgeInsets.all(5),
                             onPressed: () {},
-                            title: "Free delivery for orders above 220 ",
+                            height: 60,
+                            title:
+                                "The rstaurant is not currently accepting orders",
                             width: double.infinity,
-                            bgColor: const Color(0xffd9f1f1),
-                            textColor: const Color(0xff08a598),
-                            borderColor: Colors.pink[100],
+                            bgColor: const Color(0xffFADFE6),
+                            textColor: const Color(0XFFDC255D),
+                            borderColor: Colors.red[100],
                           ),
 
                           //@@@@@@@@//@@@@@@@@@//
                           //@@@@@@@@//@@@@@@@@@//
                           //@@@@@@@@//@@@@@@@@@//
 
-                          KH_Filled_Bottun(
-                            margin: const EdgeInsets.all(5),
-                            onPressed: () {},
-                            title: "Minimum oede amoint is 110",
-                            width: double.infinity,
-                            bgColor: const Color(0xfffce9da),
-                            textColor: const Color(0xfffeb6d05),
-                            borderColor: Colors.pink[100],
-                          ),
+                          // KH_Filled_Bottun(
+                          //   margin: const EdgeInsets.all(5),
+                          //   onPressed: () {},
+                          //   title: "Minimum oede amoint is 110",
+                          //   width: double.infinity,
+                          //   bgColor: const Color(0xfffce9da),
+                          //   textColor: const Color(0xfffeb6d05),
+                          //   borderColor: Colors.pink[100],
+                          // ),
                         ],
                       ),
                     ),
@@ -290,9 +303,14 @@ class _StatePageProductInfoPageForRestaurant
 
                     ExpansionTile(
                       iconColor: Colors.pink,
-                      title: const Text("search options",
+                      title: Container(
+                        margin: const EdgeInsets.only(left: 15, right: 15),
+                        child: const Text(
+                          "search options",
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                       children: [
                         KH_ShadowCard(
                           child: Column(
@@ -352,13 +370,25 @@ class _StatePageProductInfoPageForRestaurant
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
 
                     //@@@@@@@@//@@@@@@@@@//
                     //@@@@@@@@//@@@@@@@@@//  CardForDetilseResturant
                     //@@@@@@@@//@@@@@@@@@//
+
+                    CardForDetilseResturant(
+                      nameresturantorecommers: "Porsyon Brost",
+                      contentRestOrEcomm: "Brost",
+                      image: ImageAsset.eat,
+                      price: "200 \$",
+                      onTapAddToCart: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (contxet) => const ProductDetailsResPage(),
+                          ),
+                        );
+                      },
+                    ),
 
                     CardForDetilseResturant(
                       nameresturantorecommers: "Porsyon Brost",
@@ -391,50 +421,45 @@ class DelivryAndStarAndOpenOrClose extends StatelessWidget {
   final String text;
   final String icons;
   final Color colors;
-  final void Function()? onTap;
   const DelivryAndStarAndOpenOrClose(
       {super.key,
       required this.text,
       required this.icons,
-      this.onTap,
       required this.colors});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        alignment: Alignment.center,
-        height: 35,
-        width: 100,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+    return Container(
+      alignment: Alignment.center,
+      height: 35,
+      width: 100,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
 
-            Image.asset(
-              icons,
-              height: 30,
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
+          Image.asset(
+            icons,
+            height: 25,
+          ),
+          const SizedBox(
+            width: 3,
+          ),
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
+          //@@@@@@@@//@@@@@@@@@//
 
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: 17,
-                color: colors,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        ),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 15,
+              color: colors,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
       ),
     );
   }
@@ -449,82 +474,28 @@ class DelivryAndStarAndOpenOrClose extends StatelessWidget {
 class CartAndInfoAndFavorite extends StatelessWidget {
   final String text;
   final String icons;
-  final void Function()? onTap;
 
-  const CartAndInfoAndFavorite(
-      {super.key, required this.text, required this.icons, this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        height: 80,
-        width: 100,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-
-            Image.asset(icons, height: 30),
-
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-            //@@@@@@@@//@@@@@@@@@//
-
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: 16,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@          Favorite          @@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@@@@@@@@//
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
-
-class Favorite extends StatelessWidget {
-  final String text;
-  final void Function()? addOrDeleteFavorite;
-  const Favorite({
+  const CartAndInfoAndFavorite({
     super.key,
     required this.text,
-    required this.addOrDeleteFavorite,
+    required this.icons,
   });
 
   @override
   Widget build(BuildContext context) {
-    return KH_ShadowCard(
-      bgColor: Colors.grey[300],
-      borderRadius: 10,
-      outsideMargin: 5,
-      outsideMarginvertical: 10,
+    return Container(
+      padding: const EdgeInsets.all(8),
+      height: 80,
+      width: 100,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
 
-          IconButton(
-            onPressed: addOrDeleteFavorite,
-            icon: const Icon(
-              Icons.favorite_border_outlined,
-              size: 30,
-              color: Colors.grey,
-            ),
-          ),
+          Image.asset(icons, height: 30),
 
           //@@@@@@@@//@@@@@@@@@//
           //@@@@@@@@//@@@@@@@@@//
@@ -536,9 +507,6 @@ class Favorite extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          SizedBox(
-            height: 0,
-          )
         ],
       ),
     );
@@ -574,7 +542,8 @@ class CardForDetilseResturant extends StatelessWidget {
       child: KH_ShadowCard(
         innerPadding: 10,
         innerPaddingvertical: 10,
-        height: 120,
+        outsideMarginvertical: 8,
+        height: 125,
         width: double.infinity,
         child: Row(
           children: [
@@ -587,7 +556,7 @@ class CardForDetilseResturant extends StatelessWidget {
               child: Image.asset(
                 image,
                 height: 110,
-                width: 95,
+                width: 100,
                 fit: BoxFit.cover,
               ),
             ),
@@ -639,17 +608,22 @@ class CardForDetilseResturant extends StatelessWidget {
                         Expanded(
                           child: KH_SplashedCard(
                             borderRadius: 8,
-                            height: 30,
-                            bgColor: Colors.green[100],
+                            height: 35,
+                            bgColor: const Color(0XFFE3F6F4),
                             outsideMargin: 5,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(ImageAsset.money),
                                 const SizedBox(
-                                  width: 2,
+                                  width: 10,
                                 ),
-                                Text(price)
+                                Text(
+                                  price,
+                                  style: const TextStyle(
+                                      color: Colors.teal,
+                                      fontWeight: FontWeight.bold),
+                                )
                               ],
                             ),
                           ),
@@ -658,12 +632,13 @@ class CardForDetilseResturant extends StatelessWidget {
                         //@@@@@@@@//@@@@@@@@@//
                         //@@@@@@@@//@@@@@@@@@//
                         //@@@@@@@@//@@@@@@@@@//
+
                         Expanded(
                           child: InkWell(
                             onTap: onTapAddToCart,
                             child: KH_SplashedCard(
                               borderRadius: 8,
-                              bgColor: Colors.green[100],
+                              bgColor: const Color(0XFFE3F6F4),
                               outsideMargin: 5,
                               height: 30,
                               child: Row(
@@ -674,7 +649,12 @@ class CardForDetilseResturant extends StatelessWidget {
                                   const SizedBox(
                                     width: 2,
                                   ),
-                                  const Text("Add Cart")
+                                  const Text(
+                                    "Add Cart",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.teal),
+                                  )
                                 ],
                               ),
                             ),
